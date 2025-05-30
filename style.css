@@ -15,7 +15,7 @@ body {
     width: 100%;
     align-items: center;
     padding: 20px 60px;
-    background-color: rgb(31, 30, 30);
+    background-color: rgb(30, 26, 68);
     position: relative;
     z-index: 10;
 }
@@ -81,7 +81,7 @@ body {
 
 button {
     background-color: white;
-    color: black;
+    color: rgb(30, 26, 68);
     font-size: 20px;
     font-weight: bold;
     border: none;
@@ -103,21 +103,65 @@ button:active {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.);
 }
 
+.google-review {
+    background-color: rgb(30, 26, 68);
+    color: gold;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: Georgia, serif;
+}
+
+.review-button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background: gold;
+    color: rgb(30, 26, 68);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+
+}
+
+
+
+.google_map {
+    margin-top: 40px;
+    text-align: center
+}
+
+.location {
+    background-color: rgb(30, 26, 68);
+    color: gold;
+    text-align: center;
+}
+
+.map {
+    border: 0;
+    max-width: 100%" allowfullscreen=" " loading=" lazy"
+ referrerpolicy="no-referrer-when-downgrade"
+    
+}
+
 @media (max-width: 768px) {
     .navbar {
-        padding: 15px 20px;  /* Daha dar padding */
+        padding: 15px 20px;
     }
 
     .navlinks {
         position: absolute;
         top: 60px;
         right: 0;
-        background-color: rgb(31, 30, 30);
+        background-color: rgb(30, 26, 68);
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
         padding: 20px 30px;
-        display: none; /* Başlangıçta gizli */
+        display: none;
+        /* Başlangıçta gizli */
         gap: 15px;
         z-index: 20;
     }
@@ -135,12 +179,12 @@ button:active {
     }
 
     .baslik {
-        font-size: 32px;
+        font-size: 40px;
         margin-bottom: 10px;
     }
 
     .p1 {
-        font-size: 20px;
+        font-size: 30px;
         margin-bottom: 15px;
     }
 
