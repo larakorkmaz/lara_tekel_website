@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LARA Tekel & Shop</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">LARA TEKEL</div>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+            <ul class="navlinks">
+                <li> <a href=""> ANASAYFA </a> </li>
+                <li> <a href=""> ÜRÜNLER </a> </li>
+                <li> <a href=""> KAMPANYALAR </a> </li>
+                <li> <a href=""> İLETİŞİM </a> </li>
+                <li> <a href=""> SİPARİŞ </a> </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-section">
+            <h1 class="baslik">LARA TEKEL & SHOP</h1>
+            <h3 class="p1">KAMPANYALARIMIZA GOZ ATMAK İÇİN</h3>
+            <button>HEMEN TIKLAYIN</button>
+        </div>
+    </section>
+
+</body>
+
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.navlinks');
+        navLinks.classList.toggle('active');
+    }
+</script>
+
+</html>

@@ -1,0 +1,131 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    width: 100%;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: rgb(31, 30, 30);
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    color: gold;
+}
+
+.navlinks {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navlinks li a {
+    text-decoration: none;
+    color: gold;
+    font-weight: 500;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: gold;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navlinks {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: rgb(31, 30, 30);
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .navlinks.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        color: gold;
+        cursor: pointer;
+        margin-left: auto;
+    }
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    background-image: url(images/beer.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hero-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 2;
+    text-align: center;
+}
+
+.baslik {
+    margin-bottom: 0px;
+    font-size: 60px;
+}
+
+.p1 {
+    font-style: normal;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 40px;
+}
+
+button {
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.1s ease, transform 0.2s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: scale(1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.);
+}
