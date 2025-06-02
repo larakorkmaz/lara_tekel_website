@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LARA Tekel & Shop</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gunjala+Gondi:wght@400..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -23,24 +27,47 @@
         </nav>
     </header>
 
+
     <section class="hero">
         <div class="hero-section">
             <h1 class="baslik">LARA TEKEL & SHOP</h1>
-            <h3 class="p1">KAMPANYALARIMIZA GOZ ATMAK İÇİN</h3>
-            <button>HEMEN TIKLAYIN</button>
+            <h3 class="p1">KAMPANYALARIMIZA GÖZ ATMAK İÇİN</h3>
+            <button><span>HEMEN TIKLAYIN</span></button>
+
         </div>
     </section>
+
+
+    <section class="ozel-urunler">
+        <h2>Özel Ürünler</h2>
+        <div class="product-bar">
+            <div class="product" data-title="jack daniels" data-desc="jack daniels burdaaa">
+                <img src="images/sise1.png" alt="Şişe 1" />
+            </div>
+            <div class="product" data-title="Ürün 2" data-desc="Ürün 2 açıklaması burada.">
+                <img src="images/sise2.png  " alt="Şişe 2" />
+            </div>
+            <div class="product" data-title="Ürün 3" data-desc="Ürün 3 açıklaması burada.">
+                <img src="images/sise3.png" alt="Şişe 3" />
+            </div>
+            <!-- Daha fazla ürün ekleyebilirsin -->
+        </div>
+
+        <div class="product-detail">
+            <img src="sise1.png" alt="Seçilen ürün" id="detail-img" />
+            <div class="product-info">
+                <h3 id="detail-title">Ürün 1</h3>
+                <p id="detail-desc">Ürün 1 açıklaması burada.</p>
+            </div>
+        </div>
+    </section>
+
 
     <footer>
         <section id="google-reviews">
             <!-- Elfsight Google Reviews | Untitled Google Reviews -->
             <script src="https://static.elfsight.com/platform/platform.js" async></script>
             <div class="elfsight-app-01670f01-4350-4d61-abc6-70a8e0bb6640" data-elfsight-app-lazy></div>
-
-            <button class="review-button"
-                onclick="window.open('https://www.google.com/search?sca_esv=151be9a0a91a555a&rlz=1C1FHFK_enTR1146TR1146&hl=tr-TR&sxsrf=AE3TifP2mh9d2H4lt5IR_lnv8mvUAV9ksw:1748626201455&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EzTVrUWvLSK6Ag23eAYfogh7H95Y7FRw5YkZUaLJ0tgf9LPujsMuMoNr2RRXtJqiWCI6SsMpToM_96twZCf33GbFPga0neyhJbeih38-hKPD6VxKHA%3D%3D&q=Lara+Tekel+%26+shop+Yorumlar&sa=X&ved=2ahUKEwjZsNSc3MuNAxUyRPEDHawZJLoQ0bkNegQIPRAD&biw=1147&bih=944&dpr=1', '_blank')">
-                Yorum Yapmak İçin Tıklayın
-            </button>
 
         </section>
 
@@ -55,11 +82,6 @@
     </footer>
 </body>
 
-<script>
-    function toggleMenu() {
-        const navLinks = document.querySelector(".navlinks");
-        navLinks.classList.toggle("active");
-    }
-</script>
+<script src="script.js"></script>
 
 </html>
