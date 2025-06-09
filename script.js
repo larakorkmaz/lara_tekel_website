@@ -2,6 +2,7 @@ function toggleMenu() {
     const navLinks = document.querySelector(".navlinks");
     navLinks.classList.toggle("active");
 }
+
 const products = document.querySelectorAll('.product');
 const detailImg = document.getElementById('detail-img');
 const detailTitle = document.getElementById('detail-title');
@@ -51,6 +52,27 @@ products.forEach(product => {
     productDetail.classList.add('visible');
   });
 });
+
+
+// SCROLL BUTONLARI İÇİN EK KOD
+document.addEventListener("DOMContentLoaded", () => {
+  const productBar = document.querySelector(".product-bar");
+  const leftBtn = document.querySelector(".scroll-btn.left");
+  const rightBtn = document.querySelector(".scroll-btn.right");
+
+  if (productBar && leftBtn && rightBtn) {
+    const scrollAmount = 150;
+
+    leftBtn.addEventListener("click", () => {
+      productBar.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    });
+
+    rightBtn.addEventListener("click", () => {
+      productBar.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+  }
+});
+
 
 
 
