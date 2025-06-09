@@ -8,20 +8,24 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gunjala+Gondi:wght@400..700&display=swap"
-        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c80fbdec94.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+
+
 </head>
 
 <body>
     <header class="navbar">
-        <div class="logo">LARA TEKEL</div>
+        <div class="logo">LARA TEKEL & SHOP</div>
         <nav>
             <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
             <ul class="navlinks">
                 <li><a href=""> ANASAYFA </a></li>
                 <li><a href=""> ÜRÜNLER </a></li>
                 <li><a href=""> KAMPANYALAR </a></li>
-                <li><a href=""> İLETİŞİM </a></li>
+                <li><a href=""> HAKKIMIZDA </a></li>
                 <li><a href=""> SİPARİŞ </a></li>
             </ul>
         </nav>
@@ -30,37 +34,102 @@
 
     <section class="hero">
         <div class="hero-section">
-            <h1 class="baslik">LARA TEKEL & SHOP</h1>
-            <h3 class="p1">KAMPANYALARIMIZA GÖZ ATMAK İÇİN</h3>
-            <button><span>HEMEN TIKLAYIN</span></button>
+            <h1 class="title1">LARA</h1>
+            <h1 class="title2">TEKEL & SHOP</h1>
+            <h3 class="p1">SİPARİŞ VERMEK İÇİN</h3>
+            <button class="herobutton"><span>HEMEN TIKLAYIN</span></button>
 
         </div>
     </section>
 
+    <section class="side-section-wrapper">
+        <section class="special-products">
 
-    <section class="ozel-urunler">
-        <h2>Özel Ürünler</h2>
-        <div class="product-bar">
-            <div class="product" data-title="jack daniels" data-desc="jack daniels burdaaa">
-                <img src="images/sise1.png" alt="Şişe 1" />
-            </div>
-            <div class="product" data-title="Ürün 2" data-desc="Ürün 2 açıklaması burada.">
-                <img src="images/sise2.png  " alt="Şişe 2" />
-            </div>
-            <div class="product" data-title="Ürün 3" data-desc="Ürün 3 açıklaması burada.">
-                <img src="images/sise3.png" alt="Şişe 3" />
-            </div>
-            <!-- Daha fazla ürün ekleyebilirsin -->
-        </div>
+            <button class="scroll-btn left">
+                < </button>
+                    <button class="scroll-btn right"> > </button>
 
-        <div class="product-detail">
-            <img src="sise1.png" alt="Seçilen ürün" id="detail-img" />
-            <div class="product-info">
-                <h3 id="detail-title">Ürün 1</h3>
-                <p id="detail-desc">Ürün 1 açıklaması burada.</p>
+                    <div class="product-bar" id="productBar">
+
+                        <div class="product" data-title="jack daniels" data-desc="Açıklama 1">
+                            <img src="images/sise1.png" alt="Şişe 1" />
+                        </div>
+
+                        <div class="product" data-title="CHIVAS REGAL - 1999" data-desc="Ürün 2 açıklaması burada.">
+                            <img src="images/chiavs1999.png" alt="Şişe 2" />
+                        </div>
+
+                        <div class="product" data-title="Ürün 3" data-desc="Ürün 3 açıklaması burada.">
+                            <img src="images/sise3.png" alt="Şişe 3" />
+                        </div>
+
+                        <div class="product" data-title="Ürün 4" data-desc="Açıklama 4">
+                            <img src="images/sise1.png" alt="Şişe 1" />
+                        </div>
+
+                        <div class="product" data-title="Ürün 5" data-desc="Ürün 5 açıklaması burada.">
+                            <img src="images/chiavs1999.png" alt="Şişe 2" />
+                        </div>
+
+                        <div class="product" data-title="Ürün 6" data-desc="Ürün 6 açıklaması burada.">
+                            <img src="images/sise3.png" alt="Şişe 3" />
+                        </div>
+
+                        <div class="product" data-title="Ürün 7" data-desc="Açıklama 7">
+                            <img src="images/sise1.png" alt="Şişe 1" />
+                        </div>
+
+                        <div class="product" data-title="Ürün 8" data-desc="Ürün 8 açıklaması burada.">
+                            <img src="images/chiavs1999.png" alt="Şişe 2" />
+                        </div>
+
+                        <div class="product" data-title="Ürün 9" data-desc="Ürün 9 açıklaması burada.">
+                            <img src="images/sise3.png" alt="Şişe 3" />
+                        </div>
+
+                        <div class="product" data-title="Ürün 10" data-desc="Açıklama 10">
+                            <img src="images/sise1.png" alt="Şişe 1" />
+                        </div>
+
+                        <div class="product" data-title="Ürün 11" data-desc="Ürün 11 açıklaması burada.">
+                            <img src="images/chiavs1999.png" alt="Şişe 2" />
+                        </div>
+
+                        <div class="product" data-title="Ürün 12" data-desc="Ürün 12 açıklaması burada.">
+                            <img src="images/sise3.png" alt="Şişe 3" />
+                        </div>
+                    </div>
+
+
+
+                    <div class="product-detail">
+                        <img src="sise1.png" alt="Seçilen ürün" id="detail-img" />
+                        <div class="product-info">
+                            <h3 id="detail-title"></h3>
+                            <p id="detail-desc"></p>
+                        </div>
+                    </div>
+        </section>
+        <section class="campaigns-section">
+            <h2>Kampanyalar</h2>
+            <div class="campaigns-wrapper">
+                <div class="campaign-card">
+                    <h3>%50 İndirim</h3>
+                    <p>Seçili ürünlerde yarı fiyatına fırsatları kaçırmayın!</p>
+                    <button>İncele</button>
+                </div>
+                <div class="campaign-card">
+                    <h3>Yeni Sezon Ürünleri</h3>
+                    <p>En trend ürünlerle stilinizi yenileyin.</p>
+                    <button>Alışverişe Başla</button>
+                </div>
             </div>
-        </div>
+        </section>
     </section>
+
+
+
+
 
 
     <footer>
@@ -80,6 +149,11 @@
         </section>
 
     </footer>
+
+    <a href="https://wa.me/905335576225" target="_blank" class="whatsapp-button" aria-label="WhatsApp">
+        <img src="images/whatsapp-icon.png" alt="WhatsApp" />
+    </a>
+
 </body>
 
 <script src="script.js"></script>
