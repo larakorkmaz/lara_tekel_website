@@ -297,7 +297,6 @@ body {
 .product-info {
     width: 100%;
     max-width: 320px;
-    height: 100px;
     background-color: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
@@ -802,60 +801,64 @@ body {
 }
 
 /* MOBİL ÖZEL (576px ve altı) */
-@media (max-width: 630px) {
+@media (max-width: 800px) {
+
+    .special-products,
+    .campaigns-section,
+    .cocteyls-section {
+        width: calc(100% - 30px);
+        margin: 15px auto;
+        padding: 20px;
+        border-radius: 15px;
+        background: linear-gradient(to bottom, #2c2c2c, #3f3f3f);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
 
     .side-section-wrapper {
         flex-direction: column;
         align-items: center;
         padding: 0;
+        gap: 15px;
     }
 
-    /* Ürün detay bölümü görsel ve yazılar hizalı dursun */
-    .product-detail {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 20px;
+    .special-products h2,
+    .campaigns-section h2,
+    .cocteyls-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
         text-align: center;
-        height: auto;
+        color: #ffac30;
     }
 
-    /* Resim daha küçük ve ortalanmış */
+    .product-detail {
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+        height: auto;
+        margin-top: 15px;
+    }
+
     .product-detail img {
         width: 120px;
         height: auto;
     }
 
-    /* Yazı kutusu genişliğe uyumlu ve hizalı */
     .product-info {
-        width: 90%;
+        width: 100%;
         max-width: 300px;
         padding: 1rem;
         margin: 0 auto;
         box-sizing: border-box;
     }
 
-    /* Ürün başlığı */
     .product-info h3 {
         font-size: 1.1rem;
         margin-bottom: 0.5rem;
     }
 
-    /* Ürün açıklaması */
     .product-info p {
         font-size: 0.9rem;
         line-height: 1.4;
-    }
-
-
-    .special-products {
-        width: calc(100% - 20px);
-        margin: 15px 15px;
-    }
-
-    .campaigns-wrapper {
-        flex-direction: column;
-        gap: 1rem;
     }
 
     .campaign-card {
@@ -872,10 +875,6 @@ body {
         width: 100%;
     }
 
-    .campaigns-section {
-        margin: 20px 0;
-        width: calc(100% - 30px);
-    }
 
     .cocteyls-section {
         padding: 30px 0;
