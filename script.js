@@ -74,9 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const cocktails = [
     { img: 'images/mojito.png', name: 'Mojito', desc: 'Taze nane, limon, şeker, soda ve beyaz rom ile yapılır.' },
     { img: 'images/margarita.png', name: 'Margarita', desc: 'Tequila, triple sec ve limon suyu ile yapılan klasik bir kokteyl.' },
-    { img: 'images/cocktail3.png', name: 'Cosmopolitan', desc: 'Vodka, triple sec, kızılcık suyu ve taze limon suyu.' },
-    { img: 'images/cocktail4.png', name: 'Piña Colada', desc: 'Rom, hindistan cevizi sütü ve ananas suyu ile yapılır.' },
-    { img: 'images/sise2.png', name: 'Martini', desc: 'Vodka veya cin ve vermut ile yapılan zarif bir kokteyl.' }
+    { img: 'images/cosmopolitan.png', name: 'Cosmopolitan', desc: 'Vodka, triple sec, kızılcık suyu ve taze limon suyu.' },
+    { img: 'images/pinacolada.png', name: 'Piña Colada', desc: 'Rom, hindistan cevizi sütü ve ananas suyu ile yapılır.' },
+    { img: 'images/martini.png', name: 'Martini', desc: 'Vodka veya cin ve vermut ile yapılan zarif bir kokteyl.' }
   ];
 
   // Slaytları oluştur
@@ -225,12 +225,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Otomatik döngü
-  let autoRotateInterval;
-  function startAutoRotate() {
-    autoRotateInterval = setInterval(() => {
-      rotateCarousel(1);
-    }, 5000);
-  }
+  //let autoRotateInterval;
+  //function startAutoRotate() {
+    //autoRotateInterval = setInterval(() => {
+      //rotateCarousel(1);
+    //}, 5000);
+  //}
   
   function stopAutoRotate() {
     clearInterval(autoRotateInterval);
@@ -261,10 +261,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Otomatik döngüyü başlat
-  startAutoRotate();
+  //startAutoRotate();
 });
-
-
-
-
-
