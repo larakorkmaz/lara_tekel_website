@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cocteylLeftBtn = document.querySelector('.cocteyl-btn.left');
   const cocteylRightBtn = document.querySelector('.cocteyl-btn.right');
   const pagination = document.querySelector('.cocteyl-pagination');
-  
+
   // Kokteyl verileri
   const cocktails = [
     { img: 'images/mojito.png', name: 'Mojito', desc: 'Taze nane, limon, şeker, soda ve beyaz rom ile yapılır.' },
@@ -117,11 +117,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateCarousel() {
     const slides = document.querySelectorAll('.cocteyl-slide');
     const dots = document.querySelectorAll('.dot');
-    
+
     slides.forEach((slide, index) => {
       slide.className = 'cocteyl-slide';
       const diff = (index - currentIndex + slides.length) % slides.length;
-      
+
       if (diff === 0) {
         slide.classList.add('center');
       } else if (diff === 1) {
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
         slide.style.display = 'none';
       }
     });
-    
+
     dots.forEach((dot, index) => {
       dot.classList.toggle('active', index === currentIndex);
     });
@@ -149,18 +149,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // Carousel'i döndür
   function rotateCarousel(direction) {
     if (isAnimating) return;
-    
+
     isAnimating = true;
     const slides = document.querySelectorAll('.cocteyl-slide');
     currentIndex = (currentIndex + direction + slides.length) % slides.length;
-    
+
     // Animasyonu başlat
     slides.forEach(slide => {
-      slide.style.transition = `all ${animationDuration/1000}s cubic-bezier(0.25, 0.1, 0.25, 1)`;
+      slide.style.transition = `all ${animationDuration / 1000}s cubic-bezier(0.25, 0.1, 0.25, 1)`;
     });
-    
+
     updateCarousel();
-    
+
     // Animasyon bitince transition özelliğini kaldır
     setTimeout(() => {
       slides.forEach(slide => {
@@ -173,18 +173,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // Belirli bir index'e dön
   function rotateToIndex(index) {
     if (isAnimating || currentIndex === index) return;
-    
+
     const slides = document.querySelectorAll('.cocteyl-slide');
     const diff = (index - currentIndex + slides.length) % slides.length;
     currentIndex = index;
-    
+
     isAnimating = true;
     slides.forEach(slide => {
-      slide.style.transition = `all ${animationDuration/1000}s cubic-bezier(0.25, 0.1, 0.25, 1)`;
+      slide.style.transition = `all ${animationDuration / 1000}s cubic-bezier(0.25, 0.1, 0.25, 1)`;
     });
-    
+
     updateCarousel();
-    
+
     setTimeout(() => {
       slides.forEach(slide => {
         slide.style.transition = 'none';
@@ -197,19 +197,19 @@ document.addEventListener("DOMContentLoaded", () => {
   function setupTouchEvents() {
     let startX, moveX;
     const threshold = 50;
-    
+
     carousel.addEventListener('touchstart', (e) => {
       startX = e.touches[0].clientX;
     }, { passive: true });
-    
+
     carousel.addEventListener('touchmove', (e) => {
       if (!startX) return;
       moveX = e.touches[0].clientX;
     }, { passive: true });
-    
+
     carousel.addEventListener('touchend', () => {
       if (!startX || !moveX) return;
-      
+
       const diff = startX - moveX;
       if (Math.abs(diff) > threshold) {
         if (diff > 0) {
@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
           rotateCarousel(-1); // Sola kaydırma
         }
       }
-      
+
       startX = null;
       moveX = null;
     }, { passive: true });
@@ -227,11 +227,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Otomatik döngü
   //let autoRotateInterval;
   //function startAutoRotate() {
-    //autoRotateInterval = setInterval(() => {
-      //rotateCarousel(1);
-    //}, 5000);
+  //autoRotateInterval = setInterval(() => {
+  //rotateCarousel(1);
+  //}, 5000);
   //}
-  
+
   function stopAutoRotate() {
     clearInterval(autoRotateInterval);
   }
@@ -241,12 +241,12 @@ document.addEventListener("DOMContentLoaded", () => {
   createPagination();
   updateCarousel();
   setupTouchEvents();
-  
+
   // Buton eventleri
   if (cocteylLeftBtn && cocteylRightBtn) {
     cocteylLeftBtn.addEventListener('click', () => rotateCarousel(-1));
     cocteylRightBtn.addEventListener('click', () => rotateCarousel(1));
-    
+
     // Fareyle üzerine gelince otomatik döngüyü durdur
     [cocteylLeftBtn, cocteylRightBtn, carousel].forEach(el => {
       el.addEventListener('mouseenter', stopAutoRotate);
@@ -263,3 +263,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Otomatik döngüyü başlat
   //startAutoRotate();
 });
+
+window.addEventListener("load", () => {
+  const wrapper = document.querySelector(".wrapper");
+
+  if (wrapper) {
+    wrapper.style.transition = "opacity 0.5s ease";
+    wrapper.style.opacity = "0";
+
+    setTimeout(() => {
+      wrapper.style.display = "none";
+    }, 500);
+  }
+});
+
