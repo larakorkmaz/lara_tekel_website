@@ -1365,7 +1365,7 @@ body {
     }
 }
 
-.coming-soon-overlay {
+/*.coming-soon-overlay {
     position: fixed;
     inset: 0;
     background-color: #111;
