@@ -27,10 +27,9 @@ products.forEach(product => {
     const deltaX = smallRect.left - bigRect.left;
     const deltaY = smallRect.top - bigRect.top;
     const deltaW = smallRect.width / bigRect.width;
-    const deltaH = smallRect.height / bigRect.height;
 
     detailImg.style.transformOrigin = 'top left';
-    detailImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${deltaW}, ${deltaH})`;
+    detailImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${deltaW})`;
 
     requestAnimationFrame(() => {
       detailImg.style.transition = 'transform 0.5s ease';
@@ -45,7 +44,6 @@ products.forEach(product => {
   });
 });
 
-// Ürün barı sağ-sol kaydırma
 document.addEventListener("DOMContentLoaded", () => {
   const productBar = document.querySelector(".product-bar");
   const productLeftBtn = document.querySelector(".scroll-btn.left");
@@ -63,23 +61,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3D KOKTEYL CAROUSEL - GELİŞMİŞ VERSİYON
-  const carouselContainer = document.querySelector('.carousel-container');
+  // === 3D KOKTEYL CAROUSEL ===
   const carousel = document.getElementById('cocteylCarousel');
   const cocteylLeftBtn = document.querySelector('.cocteyl-btn.left');
   const cocteylRightBtn = document.querySelector('.cocteyl-btn.right');
   const pagination = document.querySelector('.cocteyl-pagination');
 
-  // Kokteyl verileri
   const cocktails = [
     { img: 'images/mojito.png', name: 'Mojito', desc: 'Taze nane, limon, şeker, soda ve beyaz rom ile yapılır.' },
     { img: 'images/margarita.png', name: 'Margarita', desc: 'Tequila, triple sec ve limon suyu ile yapılan klasik bir kokteyl.' },
     { img: 'images/cosmopolitan.png', name: 'Cosmopolitan', desc: 'Vodka, triple sec, kızılcık suyu ve taze limon suyu.' },
-    { img: 'images/pinacolada.png', name: 'Piña Colada', desc: 'Rom, hindistan cevizi sütü ve ananas suyu ile yapılır.' },
+    { img: 'images/pinacolada.png', name: 'Pina Colada', desc: 'Rom, hindistan cevizi sütü ve ananas suyu ile yapılır.' },
     { img: 'images/martini.png', name: 'Martini', desc: 'Vodka veya cin ve vermut ile yapılan zarif bir kokteyl.' }
   ];
 
-  // Slaytları oluştur
   function createSlides() {
     carousel.innerHTML = '';
     cocktails.forEach((cocktail, index) => {
@@ -97,7 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Pagination noktalarını oluştur
   function createPagination() {
     pagination.innerHTML = '';
     cocktails.forEach((_, index) => {
@@ -113,7 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let isAnimating = false;
   const animationDuration = 800;
 
-  // Carousel'i güncelle
   function updateCarousel() {
     const slides = document.querySelectorAll('.cocteyl-slide');
     const dots = document.querySelectorAll('.dot');
@@ -146,7 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Carousel'i döndür
   function rotateCarousel(direction) {
     if (isAnimating) return;
 
@@ -154,46 +146,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const slides = document.querySelectorAll('.cocteyl-slide');
     currentIndex = (currentIndex + direction + slides.length) % slides.length;
 
-    // Animasyonu başlat
     slides.forEach(slide => {
-      slide.style.transition = `all ${animationDuration / 1000}s cubic-bezier(0.25, 0.1, 0.25, 1)`;
+      slide.style.transition = `all ${animationDuration / 1000}s ease`;
     });
 
     updateCarousel();
 
-    // Animasyon bitince transition özelliğini kaldır
     setTimeout(() => {
-      slides.forEach(slide => {
-        slide.style.transition = 'none';
-      });
+      slides.forEach(slide => slide.style.transition = 'none');
       isAnimating = false;
     }, animationDuration);
   }
 
-  // Belirli bir index'e dön
   function rotateToIndex(index) {
     if (isAnimating || currentIndex === index) return;
 
     const slides = document.querySelectorAll('.cocteyl-slide');
-    const diff = (index - currentIndex + slides.length) % slides.length;
     currentIndex = index;
 
     isAnimating = true;
     slides.forEach(slide => {
-      slide.style.transition = `all ${animationDuration / 1000}s cubic-bezier(0.25, 0.1, 0.25, 1)`;
+      slide.style.transition = `all ${animationDuration / 1000}s ease`;
     });
 
     updateCarousel();
 
     setTimeout(() => {
-      slides.forEach(slide => {
-        slide.style.transition = 'none';
-      });
+      slides.forEach(slide => slide.style.transition = 'none');
       isAnimating = false;
     }, animationDuration);
   }
 
-  // Dokunmatik etkileşimler
   function setupTouchEvents() {
     let startX, moveX;
     const threshold = 50;
@@ -212,11 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const diff = startX - moveX;
       if (Math.abs(diff) > threshold) {
-        if (diff > 0) {
-          rotateCarousel(1); // Sağa kaydırma
-        } else {
-          rotateCarousel(-1); // Sola kaydırma
-        }
+        rotateCarousel(diff > 0 ? 1 : -1);
       }
 
       startX = null;
@@ -224,55 +203,78 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
   }
 
-  // Otomatik döngü
-  //let autoRotateInterval;
-  //function startAutoRotate() {
-  //autoRotateInterval = setInterval(() => {
-  //rotateCarousel(1);
-  //}, 5000);
-  //}
+  // === ARAMA ===
+  const searchInput = document.getElementById("cocteylSearch");
+  const searchBtn = document.getElementById("cocteylSearchBtn");
 
-  function stopAutoRotate() {
-    clearInterval(autoRotateInterval);
+  function handleSearch() {
+    const query = searchInput.value.trim().toLowerCase();
+    if (!query) return;
+
+    const foundIndex = cocktails.findIndex(c =>
+      c.name.toLowerCase().includes(query)
+    );
+
+    if (foundIndex !== -1) {
+      rotateToIndex(foundIndex);
+    } else {
+      alert("Bu adda bir kokteyl yok 😔");
+    }
   }
 
-  // Başlangıç işlemleri
+  if (searchInput && searchBtn) {
+    searchBtn.addEventListener("click", handleSearch);
+    searchInput.addEventListener("keydown", e => {
+      if (e.key === "Enter") handleSearch();
+    });
+  }
+
+  // === Başlat ===
   createSlides();
   createPagination();
   updateCarousel();
   setupTouchEvents();
 
-  // Buton eventleri
   if (cocteylLeftBtn && cocteylRightBtn) {
     cocteylLeftBtn.addEventListener('click', () => rotateCarousel(-1));
     cocteylRightBtn.addEventListener('click', () => rotateCarousel(1));
-
-    // Fareyle üzerine gelince otomatik döngüyü durdur
-    [cocteylLeftBtn, cocteylRightBtn, carousel].forEach(el => {
-      el.addEventListener('mouseenter', stopAutoRotate);
-      el.addEventListener('mouseleave', startAutoRotate);
-    });
   }
 
-  // Klavye kontrolleri
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') rotateCarousel(-1);
     if (e.key === 'ArrowRight') rotateCarousel(1);
   });
-
-  // Otomatik döngüyü başlat
-  //startAutoRotate();
 });
 
+// Yükleme ekranı
 window.addEventListener("load", () => {
   const wrapper = document.querySelector(".wrapper");
-
   if (wrapper) {
     wrapper.style.transition = "opacity 0.5s ease";
     wrapper.style.opacity = "0";
-
     setTimeout(() => {
       wrapper.style.display = "none";
     }, 500);
+  }
+});
+
+const galleryImages = document.querySelectorAll(".about-gallery img");
+const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popup-img");
+
+galleryImages.forEach(img => {
+  img.addEventListener("click", () => {
+    popup.style.display = "flex";
+    popupImg.src = img.src;
+  });
+});
+
+function closePopup() {
+  popup.style.display = "none";
+}
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    popup.style.display = "none";
   }
 });
