@@ -4,9 +4,15 @@
     box-sizing: border-box;
 }
 
+/* Her şeyi gizle */
+body>*:not(.coming-soon-overlay) {
+    display: none;
+}
+
 body {
     background-color: #222;
     font-family: "Noto Sans Gunjala Gondi", sans-serif;
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -45,6 +51,10 @@ body {
     color: white;
     font-weight: 500;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.navlinks li a:hover {
+    color: #ffac30;
 }
 
 .hamburger {
@@ -184,10 +194,17 @@ body {
     min-width: 250px;
 }
 
+.special-products h2 {
+    font-size: 2rem;
+    color: #ffac30;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
 .scroll-btn {
     font-family: "Zilla Slab", serif;
     position: absolute;
-    top: 75px;
+    top: 120px;
     background: none;
     border: none;
     width: 32px;
@@ -420,11 +437,52 @@ body {
     margin: 0 15px;
 }
 
-.cocteyls-section h2 {
+.cocteyl-header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.cocteyl-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #ffac30;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    width: 100%;
+}
+
+.cocteyl-search {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.cocteyl-search input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #555;
+    background: #2c2c2c;
+    color: white;
+    font-size: 1rem;
+}
+
+.cocteyl-search button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffac30;
+    color: #222;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cocteyl-search button:hover {
+    background-color: #ffc34d;
 }
 
 .cocteyl-3d-carousel {
@@ -607,6 +665,146 @@ body {
     box-shadow: 0 0 10px rgba(255, 172, 48, 0.7);
 }
 
+.cocteyl-search input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #555;
+    background: #2c2c2c;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.cocteyl-search button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #ffac30;
+    color: #222;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity .25s;
+}
+
+.cocteyl-search button:hover {
+    opacity: .8;
+}
+
+.about-us {
+    flex: 3;
+    /* %75 */
+    background: linear-gradient(to bottom, #2c2c2c, #3f3f3f);
+    padding: 15px;
+    border-radius: 20px;
+    color: #f0f0f0;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 15px auto;
+}
+
+.about-gallery {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+    max-width: 100%;
+}
+
+.about-gallery::-webkit-scrollbar {
+    height: 8px;
+}
+
+.about-gallery::-webkit-scrollbar-thumb {
+    background: #ffac30;
+    border-radius: 10px;
+}
+
+.about-gallery img {
+    height: 180px;
+    width: auto;
+    max-width: 90%;
+    flex-shrink: 0;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.about-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 172, 48, 0.6);
+}
+
+.about-gallery img.active {
+    border: 3px solid #ffac30;
+    box-shadow: 0 0 15px #ffac30;
+}
+
+.about-us-img {
+    width: 200px;
+    border: 1px solid #353434;
+    border-radius: 20px;
+}
+
+
+.about-us h2 {
+    font-size: 2rem;
+    color: #ffac30;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.about-card {
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 20px;
+    color: #f0f0f0;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.work-hours-section {
+    flex: 1;
+    /* %25 */
+    background: linear-gradient(to bottom, #2c2c2c, #3f3f3f);
+    padding: 15px;
+    border-radius: 20px;
+    color: #f0f0f0;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 15px auto;
+    margin-right: 15px;
+}
+
+.work-hours-section h2 {
+    font-size: 2rem;
+    color: #ffac30;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.work-card {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 1.8rem 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+}
+
+.work-card h3 {
+    color: #ffac30;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+
+
+
 .reviews {
     flex: 1 1 45%;
     min-width: 250px;
@@ -616,7 +814,7 @@ body {
     color: #f0f0f0;
     backdrop-filter: blur(6px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 15px;
+    margin: 0px 15px 15px 15px;
 }
 
 .google-review {
@@ -769,6 +967,29 @@ body {
     transform: scale(1.1);
 }
 
+.footer-bottom {
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+    padding: 20px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom a {
+    color: #f0e68c;
+    /* sarımsı pastel bir ton */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #ffd700;
+    /* hover'da daha parlak sarı */
+    text-decoration: underline;
+}
+
+
 
 
 .whatsapp-button {
@@ -788,10 +1009,6 @@ body {
     height: 100%;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
 
 .wrapper {
     background-color: #3f3f3f;
@@ -1038,6 +1255,76 @@ body {
     color: white;
 }
 
+.image-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.image-popup img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #ffac30;
+    animation: zoomIn 0.3s ease;
+}
+
+.close-popup {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    font-size: 50px;
+    color: #ffac30;
+    cursor: pointer;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Scrollbar genişliği */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Arka plan (track) — transparan */
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    /* çok hafif şeffaf beyaz */
+    border-radius: 10px;
+}
+
+/* Scrollbar sapı (thumb) */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 165, 0, 1);
+    /* turuncumsu, şeffaf */
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    /* ince kenar efekti */
+}
+
+/* Hover efekti */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 165, 0, 0.8);
+    /* hover olunca daha belirgin */
+}
+
+
 
 @media (max-width: 1100px) {
     .navbar {
@@ -1066,7 +1353,7 @@ body {
         align-items: center;
         gap: 16px;
         padding: 20px 0;
-        background-color: rgba(34, 34, 34, 0.5);
+        background-color: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(18px);
         -webkit-backdrop-filter: blur(18px);
         border-top: none;
@@ -1083,6 +1370,17 @@ body {
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;
+    }
+
+    .navlinks li a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        background-color: #1a1a1a;
+        padding: 5px 10px;
+        border: 1px solid #222;
+        border-radius: 20px;
     }
 
     .hamburger {
@@ -1119,6 +1417,28 @@ body {
         right: 15px;
         width: 50px;
         height: 50px;
+    }
+
+    .cocteyl-header {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        display: block;
+    }
+
+    .cocteyl-search {
+        position: static;
+        margin-top: 15px;
+        justify-content: center;
+        width: auto;
+    }
+
+    .cocteyl-search input {
+        width: 180px;
+    }
+
+    .cocteyl-search button {
+        flex-shrink: 0;
     }
 
     .cocteyls-section h2 {
@@ -1179,12 +1499,13 @@ body {
     }
 }
 
-/* MOBİL ÖZEL (576px ve altı) */
 @media (max-width: 800px) {
 
     .special-products,
     .campaigns-section,
-    .cocteyls-section {
+    .cocteyls-section,
+    .about-us,
+    .work-hours-section {
         width: calc(100% - 30px);
         margin: 15px auto;
         padding: 20px;
@@ -1192,6 +1513,33 @@ body {
         background: linear-gradient(to bottom, #2c2c2c, #3f3f3f);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
+
+    .special-products {
+        margin-bottom: 0;
+    }
+
+    .campaigns-section {
+        margin: 0;
+    }
+
+    .cocteyls-section {
+        margin-bottom: 0;
+    }
+
+    .side-section-wrapper {
+        gap: 0px;
+    }
+
+    .about-us {
+        margin-bottom: 0;
+    }
+
+    .work-hours-section {
+        margin-top: 0;
+    }
+
+
+
 
     .side-section-wrapper {
         flex-direction: column;
@@ -1203,7 +1551,7 @@ body {
     .special-products h2,
     .campaigns-section h2,
     .cocteyls-section h2 {
-        font-size: 1.8rem;
+
         margin-bottom: 25px;
         text-align: center;
         color: #ffac30;
@@ -1254,7 +1602,9 @@ body {
         width: 100%;
     }
 
-
+    .work-card {
+        text-align: center;
+    }
 
 
     .cocteyl-3d-carousel {
