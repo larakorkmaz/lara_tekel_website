@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LARA Tekel & Shop</title>
+    <title>Lara Tekel & Shop </title>
+    <meta name="description"
+        content="Lara Tekel & Shop – Kocaeli Kartepe'de alkollü içecekler, kampanyalar, kokteyl önerileri ve çok daha fazlası! Web sitemizi ziyaret edin.">
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,6 +45,7 @@
         </div>
     </div>
 
+
     <header class="navbar">
         <div class="logo">LARA TEKEL & SHOP</div>
         <nav>
@@ -68,6 +71,7 @@
 
     <section class="side-section-wrapper">
         <section class="special-products">
+            <h2>Urunler</h2>
             <button class="scroll-btn left">&#60;</button>
             <button class="scroll-btn right">&#62;</button>
 
@@ -115,7 +119,14 @@
 
     <!-- KOKTEYL SECTION HTML -->
     <section class="cocteyls-section box-wrapper">
-        <h2>Kokteyl Yapımı</h2>
+
+        <div class="cocteyl-header">
+            <h2 class="cocteyl-title">Kokteyl Yapımı</h2>
+            <div class="cocteyl-search">
+                <input type="text" id="cocteylSearch" placeholder="Kokteyl ara…">
+                <button id="cocteylSearchBtn">ARA</button>
+            </div>
+        </div>
 
         <div class="cocteyl-3d-carousel">
             <button class="cocteyl-btn left" onclick="rotateCarousel(-1)">&#10094;</button>
@@ -133,6 +144,62 @@
             <!-- Noktalar JavaScript ile eklenecek -->
         </div>
     </section>
+
+    <section class="side-section-wrapper">
+        <!-- Hakkımızda -->
+        <section class="about-us">
+            <h2>Hakkımızda</h2>
+            <div class="about-gallery">
+                <img src="images/laratekel_1.png" alt="Mekan 1" />
+                <img src="images/laratekel_1.png" alt="Mekan 2" />
+                <img src="images/laratekel_1.png" alt="Mekan 3" />
+                <img src="images/laratekel_1.png" alt="Mekan 3" />
+                <img src="images/laratekel_1.png" alt="Mekan 3" />
+                <img src="images/laratekel_1.png" alt="Mekan 3" />
+                <img src="images/laratekel_1.png" alt="Mekan 3" />
+                <img src="images/laratekel_1.png" alt="Mekan 1" />
+                <img src="images/laratekel_1.png" alt="Mekan 2" />
+                <img src="images/laratekel_1.png" alt="Mekan 3" />
+                <img src="images/laratekel_1.png" alt="Mekan 3" />
+                <img src="images/laratekel_1.png" alt="Mekan 3" />
+                <img src="images/laratekel_1.png" alt="Mekan 3" />
+                <img src="images/laratekel_1.png" alt="Mekan 3" />
+            </div>
+
+            <div class="about-card">
+                <p>
+                    Lara Tekel & Shop olarak Kartepe’de en kaliteli içecekleri, en uygun fiyata sunuyoruz.
+                    Her damağa hitap eden özel seçeneklerle sizlerleyiz.
+                </p>
+            </div>
+        </section>
+
+        <!-- Çalışma Saatleri -->
+        <section class="work-hours-section">
+            <h2>Çalışma Saatleri</h2>
+            <div class="work-hours">
+                <div class="work-card">
+                    <h3>Pazartesi</h3>
+                    <p>09:00 - 00:00</p>
+                    <h3>Sali</h3>
+                    <p>09:00 - 00:00</p>
+                    <h3>Carsamba</h3>
+                    <p>09:00 - 00:00</p>
+                    <h3>Persembe</h3>
+                    <p>09:00 - 00:00</p>
+                    <h3>Cuma</h3>
+                    <p>09:00 - 00:00</p>
+                    <h3>Cumartesi</h3>
+                    <p>09:00 - 00:00</p>
+                    <h3>Pazar</h3>
+                    <p>09:00 - 00:00</p>
+
+                </div>
+            </div>
+        </section>
+    </section>
+
+
 
 
     <section id="google-reviews">
@@ -183,8 +250,11 @@
         </div>
 
         <div class="footer-bottom">
-            © 2025 LARA TEKEL & SHOP | Tüm hakları saklıdır.
+            © 2025 LARA TEKEL & SHOP | Tüm hakları saklıdır. <br>
+            Tasarımı ve kodlaması <a href="https://github.com/larakorkmaz" target="_blank">Lara Korkmaz</a> tarafından
+            yapılmıştır.
         </div>
+
     </div>
 
     </footer>
@@ -193,6 +263,11 @@
     <a href="https://wa.me/905335576225" target="_blank" class="whatsapp-button" aria-label="WhatsApp">
         <img src="images/whatsapp-icon.png" alt="WhatsApp" />
     </a>
+
+    <div class="image-popup" id="popup">
+        <span class="close-popup" onclick="closePopup()">×</span>
+        <img id="popup-img" src="" alt="Büyük görsel">
+    </div>
 
 </body>
 
