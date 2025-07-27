@@ -1,0 +1,57 @@
+[
+    {
+        "img": "images/mojito.png",
+        "name": "Mojito",
+        "desc": "Taze nane, lime, beyaz rom, soda ve şeker ile yapılan ferahlatıcı bir içki."
+    },
+    {
+        "img": "images/margarita.png",
+        "name": "Margarita",
+        "desc": "Tekila, lime suyu ve triple sec ile yapılan klasik bir kokteyl."
+    },
+    {
+        "img": "images/cosmopolitan.png",
+        "name": "Cosmopolitan",
+        "desc": "Vodka, triple sec, kızılcık suyu ve lime ile yapılır."
+    },
+    {
+        "img": "images/pinacolada.png",
+        "name": "Pina Colada",
+        "desc": "Ananas suyu, hindistan cevizi sütü ve rom ile yapılan tropik içecek."
+    },
+    {
+        "img": "images/martini.png",
+        "name": "Martini",
+        "desc": "Cin veya vodka ile kırmızı vermut karıştırılarak yapılır."
+    },
+    {
+        "img": "images/aperol.png",
+        "name": "Aperol Spritz",
+        "desc": "Aperol, prosecco ve soda ile yapılan İtalyan kokteyli."
+    },
+    {
+        "img": "images/whiskeysour.png",
+        "name": "Whiskey Sour",
+        "desc": "Bourbon viski, limon suyu ve şeker şurubu ile yapılır."
+    },
+    {
+        "img": "images/espresso.png",
+        "name": "Espresso Martini",
+        "desc": "Vodka, kahve likörü ve taze espresso ile yapılır."
+    },
+    {
+        "img": "images/longisland.png",
+        "name": "Long Island Iced Tea",
+        "desc": "Vodka, tekila, rom, cin, triple sec ve cola ile yapılır."
+    },
+    {
+        "img": "images/negroni.png",
+        "name": "Negroni",
+        "desc": "Campari, cin ve kırmızı vermut ile yapılan acı-tatlı bir klasik."
+    },
+    {
+        "img": "images/caipirinha.png",
+        "name": "Caipirinha",
+        "desc": "Cachaça, lime ve şeker ile yapılan Brezilya'nın ulusal içkisi."
+    }
+]
