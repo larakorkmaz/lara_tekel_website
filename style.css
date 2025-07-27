@@ -59,9 +59,67 @@ body {
 
 .hamburger {
     display: none;
-    font-size: 30px;
-    color: white;
     cursor: pointer;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    background: transparent;
+    border: none;
+    padding: 0;
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: white;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger span:nth-child(3) {
+    bottom: 0;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+    width: 100%;
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+    width: 100%;
+}
+
+.hamburger:hover span {
+    background: #ffac30;
+}
+
+.hamburger.active:hover span {
+    background: #ffac30;
+    opacity: 1;
+}
+
+.hamburger.active:hover span:nth-child(2) {
+    opacity: 0;
 }
 
 .hero {
@@ -721,7 +779,7 @@ body {
 }
 
 .about-gallery img {
-    height: 180px;
+    height: 220px;
     width: auto;
     max-width: 90%;
     flex-shrink: 0;
@@ -800,9 +858,6 @@ body {
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
-
-
-
 
 
 .reviews {
@@ -1325,70 +1380,62 @@ body {
 }
 
 
-
 @media (max-width: 1100px) {
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 16px;
-        width: 100%;
-        padding: 8px 20px;
-        height: 88px;
-        background-color: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 20;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    .hamburger {
+        display: block;
     }
 
     .navlinks {
         position: fixed;
-        top: 88px;
-        left: 0;
-        width: 100%;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(15px);
         flex-direction: column;
         align-items: center;
-        gap: 16px;
-        padding: 20px 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-        border-top: none;
-        box-shadow: none;
-        opacity: 0;
-        transform: translateY(-20px);
-        pointer-events: none;
-        transition: opacity 0.5s ease, transform 0.35s ease;
-        z-index: 15;
+        justify-content: center;
+        gap: 25px;
+        transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
+        z-index: 1000;
+        padding-top: 80px;
+        border-left: 1px solid rgba(255, 172, 48, 0.3);
     }
 
     .navlinks.active {
-        display: flex;
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
+        right: 0;
     }
 
     .navlinks li a {
-        text-decoration: none;
-        color: white;
-        font-weight: 500;
-        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-        background-color: #1a1a1a;
-        padding: 5px 10px;
-        border: 1px solid #222;
-        border-radius: 20px;
+        font-size: 1.3rem;
+        padding: 12px 25px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        display: inline-block;
     }
 
-    .hamburger {
-        order: 1;
-        font-size: 30px;
-        color: white;
-        cursor: pointer;
-        display: block;
+    .navlinks li a:hover {
+        background: rgba(255, 172, 48, 0.2);
+        transform: translateX(5px);
+    }
+
+    .navlinks::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .navlinks.active::before {
+        opacity: 1;
     }
 
     .product-bar {
