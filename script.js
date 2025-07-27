@@ -1,7 +1,20 @@
-// Mobil menü aç/kapat
 function toggleMenu() {
-  const navLinks = document.querySelector(".navlinks");
-  navLinks.classList.toggle("active");
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.navlinks');
+    const body = document.body;
+    
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    body.classList.toggle('menu-open');
+    
+    // Menü linklerine tıklanınca kapat
+    document.querySelectorAll('.navlinks a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            body.classList.remove('menu-open');
+        });
+    });
 }
 
 // Ürün detay geçişi
@@ -67,13 +80,58 @@ document.addEventListener("DOMContentLoaded", () => {
   const cocteylRightBtn = document.querySelector('.cocteyl-btn.right');
   const pagination = document.querySelector('.cocteyl-pagination');
 
-  const cocktails = [
-    { img: 'images/mojito.png', name: 'Mojito', desc: 'Taze nane, limon, şeker, soda ve beyaz rom ile yapılır.' },
-    { img: 'images/margarita.png', name: 'Margarita', desc: 'Tequila, triple sec ve limon suyu ile yapılan klasik bir kokteyl.' },
-    { img: 'images/cosmopolitan.png', name: 'Cosmopolitan', desc: 'Vodka, triple sec, kızılcık suyu ve taze limon suyu.' },
-    { img: 'images/pinacolada.png', name: 'Pina Colada', desc: 'Rom, hindistan cevizi sütü ve ananas suyu ile yapılır.' },
-    { img: 'images/martini.png', name: 'Martini', desc: 'Vodka veya cin ve vermut ile yapılan zarif bir kokteyl.' }
-  ];
+  let cocktails = [];
+
+  fetch('cocktails.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Veriler yüklenemedi (Hata ${response.status})`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      cocktails = data;
+      createSlides();
+      createPagination();
+      updateCarousel();
+      setupTouchEvents();
+
+      if (cocteylLeftBtn && cocteylRightBtn) {
+        cocteylLeftBtn.addEventListener('click', () => rotateCarousel(-1));
+        cocteylRightBtn.addEventListener('click', () => rotateCarousel(1));
+      }
+    })
+    .catch(err => {
+      console.error("Hata:", err);
+      alert("Ürün bilgileri yüklenirken sorun oluştu. Lütfen sayfayı yenileyin.");
+
+      // Acil durum verileri
+      cocktails = [{
+        html: `
+    <div style="
+      width: 200px; 
+      height: 200px;
+      background: #ffac30;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+    ">
+      <i class="fa-solid fa-martini-glass" style="font-size: 50px"></i>
+      <p>Ürün Yüklenemedi</p>
+    </div>
+  `,
+        name: "Demo İçecek",
+        desc: "Menü şu an gösterilemiyor"
+      }];
+
+      createSlides();
+      createPagination();
+    });
+
+
 
   function createSlides() {
     carousel.innerHTML = '';
@@ -103,6 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
   let currentIndex = 0;
   let isAnimating = false;
   const animationDuration = 800;
@@ -130,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
         slide.classList.add('left-2');
         slide.style.setProperty('--dir', '-1');
       } else {
-        slide.style.display = 'none';
+        slide.style.display = '';
       }
     });
 
@@ -179,7 +238,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function setupTouchEvents() {
     let startX, moveX;
-    const threshold = 50;
+    const threshold = window.innerWidth < 768 ? 30 : 50;
+
+    carousel.style.touchAction = "pan-y";
+
 
     carousel.addEventListener('touchstart', (e) => {
       startX = e.touches[0].clientX;
@@ -230,15 +292,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // === Başlat ===
-  createSlides();
-  createPagination();
-  updateCarousel();
-  setupTouchEvents();
-
-  if (cocteylLeftBtn && cocteylRightBtn) {
-    cocteylLeftBtn.addEventListener('click', () => rotateCarousel(-1));
-    cocteylRightBtn.addEventListener('click', () => rotateCarousel(1));
-  }
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') rotateCarousel(-1);
