@@ -1,57 +1,222 @@
 [
     {
-        "img": "images/mojito.png",
+        "id": "mojito",
         "name": "Mojito",
-        "desc": "Taze nane, lime, beyaz rom, soda ve şeker ile yapılan ferahlatıcı bir içki."
+        "desc": "Nane, lime ve rom ile yapılan ferahlatıcı bir kokteyl.",
+        "img": "images/cocktails/mojito.png",
+        "type": "alkollu",
+        "featured": true,
+        "base": "rum",
+        "details": "Mojito, taze nane yaprakları, lime suyu, şeker, soda ve beyaz rom ile hazırlanan klasik bir Küba kokteylidir. Genellikle yaz aylarında tercih edilir ve ferahlatıcı özelliği ile bilinir."
     },
     {
-        "img": "images/margarita.png",
+        "id": "margarita",
+        "img": "images/cocktails/margarita.png",
         "name": "Margarita",
-        "desc": "Tekila, lime suyu ve triple sec ile yapılan klasik bir kokteyl."
+        "desc": "Tekila, lime suyu ve triple sec ile yapılan klasik bir kokteyl.",
+        "type": "alkollu",
+        "featured": true,
+        "base": "tequila"
     },
     {
-        "img": "images/cosmopolitan.png",
+        "id": "cosmopolitan",
+        "img": "images/cocktails/cosmopolitan.png",
         "name": "Cosmopolitan",
-        "desc": "Vodka, triple sec, kızılcık suyu ve lime ile yapılır."
+        "desc": "Vodka, triple sec, kızılcık suyu ve lime ile yapılır.",
+        "type": "alkollu",
+        "featured": true,
+        "base": "vodka"
     },
     {
-        "img": "images/pinacolada.png",
+        "id": "pinacolada",
+        "img": "images/cocktails/pinacolada.png",
         "name": "Pina Colada",
-        "desc": "Ananas suyu, hindistan cevizi sütü ve rom ile yapılan tropik içecek."
+        "desc": "Ananas suyu, hindistan cevizi sütü ve rom ile yapılan tropik içecek.",
+        "type": "alkollu",
+        "featured": false,
+        "base": "rum"
     },
     {
-        "img": "images/martini.png",
+        "id": "martini",
+        "img": "images/cocktails/martini.png",
         "name": "Martini",
-        "desc": "Cin veya vodka ile kırmızı vermut karıştırılarak yapılır."
+        "desc": "Cin veya vodka ile kırmızı vermut karıştırılarak yapılır.",
+        "type": "alkollu",
+        "featured": true,
+        "base": "gin"
     },
     {
-        "img": "images/aperol.png",
+        "id": "aperolspritz",
+        "img": "images/cocktails/aperol.png",
         "name": "Aperol Spritz",
-        "desc": "Aperol, prosecco ve soda ile yapılan İtalyan kokteyli."
+        "desc": "Aperol, prosecco ve soda ile yapılan İtalyan kokteyli.",
+        "type": "alkollu",
+        "featured": false,
+        "base": "liqueur"
     },
     {
-        "img": "images/whiskeysour.png",
+        "id": "whiskeysour",
+        "img": "images/cocktails/whiskeysour.png",
         "name": "Whiskey Sour",
-        "desc": "Bourbon viski, limon suyu ve şeker şurubu ile yapılır."
+        "desc": "Bourbon viski, limon suyu ve şeker şurubu ile yapılır.",
+        "type": "alkollu",
+        "featured": false,
+        "base": "whiskey"
     },
     {
-        "img": "images/espresso.png",
+        "id": "espressomartini",
+        "img": "images/cocktails/espresso.png",
         "name": "Espresso Martini",
-        "desc": "Vodka, kahve likörü ve taze espresso ile yapılır."
+        "desc": "Vodka, kahve likörü ve taze espresso ile yapılır.",
+        "type": "alkollu",
+        "featured": false,
+        "base": "coffee"
     },
     {
-        "img": "images/longisland.png",
+        "id": "longisland",
+        "img": "images/cocktails/longisland.png",
         "name": "Long Island Iced Tea",
-        "desc": "Vodka, tekila, rom, cin, triple sec ve cola ile yapılır."
+        "desc": "Vodka, tekila, rom, cin, triple sec ve cola ile yapılır.",
+        "type": "alkollu",
+        "featured": true,
+        "base": "vodka"
     },
     {
-        "img": "images/negroni.png",
+        "id": "negroni",
+        "img": "images/cocktails/negroni.png",
         "name": "Negroni",
-        "desc": "Campari, cin ve kırmızı vermut ile yapılan acı-tatlı bir klasik."
+        "desc": "Campari, cin ve kırmızı vermut ile yapılan acı-tatlı bir klasik.",
+        "type": "alkollu",
+        "featured": false,
+        "base": "gin"
     },
     {
-        "img": "images/caipirinha.png",
+        "id": "caipirinha",
+        "img": "images/cocktails/caipirinha.png",
         "name": "Caipirinha",
-        "desc": "Cachaça, lime ve şeker ile yapılan Brezilya'nın ulusal içkisi."
+        "desc": "Cachaça, lime ve şeker ile yapılan Brezilya'nın ulusal içkisi.",
+        "type": "alkollu",
+        "featured": false,
+        "base": "rum"
+    },
+    {
+        "id": "bloodymary",
+        "name": "Bloody Mary",
+        "desc": "Domates suyu,votka ve baharatlarla yapılan güçlü bir kokteyl.",
+        "img": "images/cocktails/bloodymary.png",
+        "type": "alkollu",
+        "featured": false,
+        "base": "vodka",
+        "details": "Bloody Mary, votka, domates suyu, limon suyu, worcestershire sosu, tabasco, karabiber ve kereviz sapı ile hazırlanır. Genellikle brunch içeceği olarak tercih edilir."
+    },
+    {
+        "id": "mai-tai",
+        "name": "Mai Tai",
+        "desc": "Rom, lime ve portakal likörüyle tatlı-ekşi bir klasik.",
+        "img": "images/cocktails/maitai.png",
+        "type": "alkollu",
+        "featured": false,
+        "base": "rum",
+        "details": "Mai Tai, koyu rom, lime suyu, curaçao, orgeat şurubu ile hazırlanan tropik bir tiki kokteylidir."
+    },
+    {
+        "id": "white-russian",
+        "name": "White Russian",
+        "desc": "Votka, kahve likörü ve krema ile yapılan yumuşak içimli kokteyl.",
+        "img": "images/cocktails/whiterussian.png",
+        "type": "alkollu",
+        "featured": false,
+        "base": "vodka",
+        "details": "White Russian, votka ve kahve likörünün üzerine krema eklenerek hazırlanır. Tatlı ve yoğun içimiyle bilinir."
+    },
+    {
+        "id": "sangria",
+        "name": "Sangria",
+        "desc": "Şarap ve taze meyvelerle hazırlanan İspanyol içeceği.",
+        "img": "images/cocktails/sangria.png",
+        "type": "alkollu",
+        "featured": false,
+        "base": "wine",
+        "details": "Sangria, kırmızı (veya beyaz) şarap, portakal suyu, brandy ve mevsim meyveleriyle yapılır. Soğuk servis edilir ve paylaşmaya uygundur."
+    },
+    {
+        "id": "mocktailberry",
+        "name": "Berry Mocktail",
+        "desc": "Orman meyveleriyle yapılan alkolsüz serinlik.",
+        "img": "images/cocktails/mocktailberry.png",
+        "type": "alkolsuz",
+        "featured": false,
+        "base": "non-alcoholic",
+        "details": "Çilek, böğürtlen, lime suyu ve gazlı su ile yapılan alkolsüz, ferahlatıcı bir meyve kokteyli."
+    },
+    {
+        "id": "ginfizz",
+        "name": "Gin Fizz",
+        "desc": "Cin, limon suyu ve soda ile yapılan ferahlatıcı bir klasik.",
+        "img": "images/cocktails/ginfizz.png",
+        "type": "alkollu",
+        "featured": false,
+        "base": "gin",
+        "details": "Gin Fizz, cin, taze limon suyu, şeker şurubu ve soda ile yapılan klasik bir kokteyldir. Köpüklü yapısı ve limon aroması ile hafif bir içim sunar."
+    },
+    {
+        "id": "tequila-sunrise",
+        "name": "Tequila Sunrise",
+        "desc": "Tekila, portakal suyu ve grenadinle renkli, tatlı bir içki.",
+        "img": "images/cocktails/tequilasunrise.png",
+        "type": "alkollu",
+        "featured": false,
+        "base": "tequila",
+        "details": "Tequila Sunrise, tekila, taze portakal suyu ve grenadin ile yapılan göz alıcı görünümüyle meşhur bir kokteyldir. Tatlı ve yumuşak içimiyle bilinir."
+    },
+    {
+        "id": "bramble",
+        "name": "Bramble",
+        "desc": "Cin, böğürtlen likörü ve limon suyuyla yapılan modern bir klasik.",
+        "img": "images/cocktails/bramble.png",
+        "type": "alkollu",
+        "featured": false,
+        "base": "gin",
+        "details": "Bramble, cin, taze limon suyu, şeker şurubu ve böğürtlen likörüyle hazırlanır. Meyvemsi ve ekşi tatları dengelidir."
+    },
+    {
+        "id": "mocktail-citrusmint",
+        "name": "Citrus Mint Cooler",
+        "desc": "Lime, portakal ve nane ile yapılan alkolsüz bir yaz kokteyli.",
+        "img": "images/cocktails/citrusmint.png",
+        "type": "alkolsuz",
+        "featured": false,
+        "base": "non-alcoholic",
+        "details": "Taze lime, portakal suyu, nane ve soda ile hazırlanan bu mocktail serinletici ve canlandırıcı bir seçenektir."
+    },
+    {
+        "id": "oldfashioned",
+        "name": "Old Fashioned",
+        "desc": "Bourbon viski, şeker ve angostura bitters ile yapılan klasik.",
+        "img": "images/cocktails/oldfashioned.png",
+        "type": "alkollu",
+        "featured": false,
+        "base": "whiskey",
+        "details": "Old Fashioned, viski severlerin favorilerinden biridir. Az malzeme ile güçlü aroma sunar: bourbon, bitter ve şeker."
+    },
+    {
+        "id": "manhattan",
+        "name": "Manhattan",
+        "desc": "Çavdar viski, kırmızı vermut ve bitters ile yapılan klasik bir bar kokteyli.",
+        "img": "images/cocktails/manhattan.png",
+        "type": "alkollu",
+        "featured": false,
+        "base": "whiskey",
+        "details": "Manhattan, çavdar viskisi (veya bourbon), kırmızı vermut ve birkaç damla angostura bitters ile yapılır. Karıştırılarak hazırlanır ve kiraz ile süslenerek servis edilir."
+    },
+    {
+        "id": "daiquiri",
+        "name": "Daiquiri",
+        "desc": "Rom, lime suyu ve şekerle yapılan sade ama zarif bir kokteyl.",
+        "img": "images/cocktails/daiquiri.png",
+        "type": "alkollu",
+        "featured": false,
+        "base": "rum",
+        "details": "Klasik Daiquiri, beyaz rom, taze lime suyu ve şeker şurubu ile yapılır. Shaker'da buzla çalkalanır ve soğuk servis edilir. Ferahlatıcı ve tropik bir tada sahiptir."
     }
 ]
