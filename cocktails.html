@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tüm Kokteyller | Lara Tekel & Shop</title>
+    <meta name="description"
+        content="Kartepe'deki Lara Tekel & Shop'ta alkollü içecekler, kampanyalar, kokteyl önerileri ve daha fazlası. Web sitemizi ziyaret edin!">
+
+    <!-- CSS Dosyaları -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="cocktails.css" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c80fbdec94.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- ✅ NAVBAR -->
+    <header class="navbar">
+        <div class="logo">LARA TEKEL & SHOP</div>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="navlinks">
+                <li class="nav-item">
+                    <a href="index.html#hero" class="nav-expand active">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="nav-label">ANASAYFA</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="cocktails.html#all-cocktail" class="nav-expand active">
+                        <i class="fa-solid fa-martini-glass"></i>
+                        <span class="nav-label">KOKTEYLLER</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#hero" class="nav-expand active">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span class="nav-label">GERİ DÖN</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ✅ KOKTEYL LİSTESİ -->
+    <section class="all-cocktail" id="all-cocktail">
+        <h2>Tüm Kokteyl Tarifleri</h2>
+
+        <div class="filter-buttons">
+            <input type="text" id="cocktailSearch" placeholder="Kokteyl ara...">
+            <button onclick="toggleBaseFilter()"><i class="fa-solid fa-filter"></i> Filtrele</button>
+            <button id="favToggleBtn" onclick="toggleFavoriteView()"><i class="fa-solid fa-heart"></i>
+                Favorilerim</button>
+        </div>
+
+        <div id="baseFilterPanel" class="base-filter hidden">
+            <label><input type="checkbox" value="whiskey" onchange="applyAllFilters()"> Viski Bazlı</label>
+            <label><input type="checkbox" value="gin" onchange="applyAllFilters()"> Cin Bazlı</label>
+            <label><input type="checkbox" value="rum" onchange="applyAllFilters()"> Rom Bazlı</label>
+            <label><input type="checkbox" value="vodka" onchange="applyAllFilters()"> Votka Bazlı</label>
+            <label><input type="checkbox" value="tequila" onchange="applyAllFilters()"> Tekila Bazlı</label>
+            <label><input type="checkbox" value="liqueur" onchange="applyAllFilters()"> Likörlü</label>
+            <label><input type="checkbox" value="coffee" onchange="applyAllFilters()"> Kahveli</label>
+            <label><input type="checkbox" value="non-alcoholic" onchange="applyAllFilters()"> Alkolsüz</label>
+            <button onclick="clearBaseFilter()">Temizle</button>
+        </div>
+
+
+        <div class="cocktail-grid" id="cocktailGrid"></div>
+
+        <div class="pagination" id="pagination"></div>
+
+
+
+    </section>
+
+    <!-- Modal (Açılır pencere) -->
+    <div class="modal-overlay" id="cocktailModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <img id="modalImage" src="" alt="Kokteyl Görseli" />
+            <h3 id="modalTitle">Kokteyl Adı</h3>
+            <p id="modalDesc">Detaylı açıklama burada olacak.</p>
+        </div>
+    </div>
+
+
+
+    <!-- (İsteğe bağlı) ✅ FOOTER -->
+    <!-- Footer'ı da eklemek istersen buraya index.html'dekini aynen yapıştırabilirsin -->
+
+    <script src="script.js"></script>
+    <script src="cocktails.js"></script>
+
+
+</body>
+
+</html>
