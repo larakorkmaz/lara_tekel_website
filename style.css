@@ -4,10 +4,9 @@
     box-sizing: border-box;
 }
 
-/*
 body>*:not(.coming-soon-overlay) {
     display: none;
-}*/
+}
 
 body {
     background-color: #222;
