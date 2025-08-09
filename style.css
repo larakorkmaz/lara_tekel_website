@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* Her şeyi gizle */
 body>*:not(.coming-soon-overlay) {
     display: none;
 }
@@ -38,6 +39,34 @@ body {
     color: white;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
+
+
+/* DİL BUTONU STİLİ */
+.nav-item.lang-btn a {
+    display: flex;
+    align-items: center;
+    /* Dikey hizalama */
+    justify-content: center;
+    gap: 5px;
+    /* Globe ikonu ile TR yazısı arasına boşluk */
+    height: 100%;
+    /* Yüksekliği diğer nav-item ile eşit olsun */
+}
+
+.nav-item.lang-btn i {
+    font-size: 1.2em;
+    /* İkon boyutu diğerleriyle aynı */
+    display: flex;
+    align-items: center;
+}
+
+.navlinks {
+    display: flex;
+    align-items: center;
+    /* Tüm menü elemanlarını ortala */
+}
+
+
 
 .navlinks {
     display: flex;
@@ -1439,8 +1468,8 @@ body {
     }
 }
 
-@media (max-width: 1100px) {
 
+@media (max-width: 1100px) {
     .hamburger {
         display: block;
     }
@@ -1454,12 +1483,15 @@ body {
         background: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(15px);
         flex-direction: column;
-        align-items: left;
-        justify-content: center;
-        gap: 25px;
-        transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
+        /* ↓↓ asıl düzeltmeler ↓↓ */
+        align-items: flex-start;
+        /* left değil, flex-start */
+        justify-content: flex-start;
+        padding: 80px 20px 20px;
+        /* içeriden biraz boşluk */
+        gap: 16px;
+        transition: right .4s cubic-bezier(.77, .2, .05, 1);
         z-index: 1000;
-        padding-top: 80px;
         border-left: 1px solid rgba(255, 172, 48, 0.3);
     }
 
@@ -1467,38 +1499,37 @@ body {
         right: 0;
     }
 
+    .navlinks li {
+        width: 100%;
+    }
+
     .navlinks li a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        text-align: left;
         font-size: 1.2rem;
-        padding: 12px 25px;
-        border-radius: 30px;
-        transition: all 0.3s ease;
-        display: inline-block;
+        padding: 12px 10px;
+        border-radius: 12px;
     }
 
     .navlinks li a:hover {
         background: rgba(255, 172, 48, 0.2);
-        transform: translateX(5px);
+        transform: none;
+        /* mobilde yana kaydırma yok */
     }
 
-    .navlinks::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
+    .nav-item.lang-btn,
+    .nav-item.lang-btn a {
         width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: -1;
-        opacity: 0;
-        transition: opacity 0.3s ease;
     }
 
-    .navlinks.active::before {
-        opacity: 1;
-    }
-
-    .navlinks li i {
-        color: #ffc34d;
+    .nav-item.lang-btn a {
+        justify-content: flex-start;
+        /* ortadan sola */
+        padding-left: 10px;
+        /* menü iç boşluğu ile aynı */
     }
 
     .product-bar {
