@@ -1,0 +1,332 @@
+[
+    {
+        "id": "mojito",
+        "name": "Mojito",
+        "desc": "A refreshing cocktail made with mint, lime, and rum.",
+        "img": "../images/cocktails/mojito.png",
+        "type": "alcoholic",
+        "featured": true,
+        "base": "rum",
+        "details": "Mojito is a classic Cuban cocktail prepared with fresh mint leaves, lime juice, sugar, soda water, and white rum. Commonly enjoyed in summer, it is known for its refreshing quality."
+    },
+    {
+        "id": "margarita",
+        "name": "Margarita",
+        "desc": "A classic cocktail made with tequila, lime juice, and triple sec.",
+        "img": "../images/cocktails/margarita.png",
+        "type": "alcoholic",
+        "featured": true,
+        "base": "tequila",
+        "details": "Margarita is a popular cocktail made with tequila, fresh lime juice, and triple sec. Often served with a salted rim and ice, it’s known for its sweet and sour balance."
+    },
+    {
+        "id": "cosmopolitan",
+        "name": "Cosmopolitan",
+        "desc": "Made with vodka, triple sec, cranberry juice, and lime.",
+        "img": "../images/cocktails/cosmopolitan.png",
+        "type": "alcoholic",
+        "featured": true,
+        "base": "vodka",
+        "details": "Cosmopolitan is a chic cocktail made with vodka, triple sec, cranberry juice, and lime juice. It has a vibrant pink color and is served chilled in a martini glass."
+    },
+    {
+        "id": "pinacolada",
+        "name": "Pina Colada",
+        "desc": "A tropical drink made with pineapple juice, coconut milk, and rum.",
+        "img": "../images/cocktails/pinacolada.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "rum",
+        "details": "Pina Colada is a sweet tropical cocktail made by blending pineapple juice, coconut milk or cream, and rum with ice. It’s creamy, fruity, and perfect for beach vibes."
+    },
+    {
+        "id": "martini",
+        "name": "Martini",
+        "desc": "Made by mixing gin or vodka with red vermouth.",
+        "img": "../images/cocktails/martini.png",
+        "type": "alcoholic",
+        "featured": true,
+        "base": "gin",
+        "details": "Martini is a timeless classic cocktail made by mixing gin or vodka with vermouth. Often garnished with an olive or a lemon twist, it’s known for its elegance and strength."
+    },
+    {
+        "id": "aperolspritz",
+        "name": "Aperol Spritz",
+        "desc": "An Italian cocktail made with Aperol, prosecco, and soda.",
+        "img": "../images/cocktails/aperol.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "liqueur",
+        "details": "Aperol Spritz is a light and bubbly Italian cocktail made with Aperol, prosecco, and soda water. It's known for its bittersweet taste and orange hue."
+    },
+    {
+        "id": "whiskeysour",
+        "name": "Whiskey Sour",
+        "desc": "Made with bourbon whiskey, lemon juice, and sugar syrup.",
+        "img": "../images/cocktails/whiskeysour.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "whiskey",
+        "details": "Whiskey Sour is a classic cocktail combining bourbon whiskey, fresh lemon juice, and sugar syrup. Often served over ice and optionally topped with egg white foam."
+    },
+    {
+        "id": "espressomartini",
+        "name": "Espresso Martini",
+        "desc": "Made with vodka, coffee liqueur, and fresh espresso.",
+        "img": "../images/cocktails/espresso.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "coffee",
+        "details": "Espresso Martini is a modern cocktail made with vodka, coffee liqueur, and freshly brewed espresso. It's bold, rich, and perfect for coffee lovers."
+    },
+    {
+        "id": "longisland",
+        "name": "Long Island Iced Tea",
+        "desc": "Made with vodka, tequila, rum, gin, triple sec, and cola.",
+        "img": "../images/cocktails/longisland.png",
+        "type": "alcoholic",
+        "featured": true,
+        "base": "vodka",
+        "details": "Long Island Iced Tea is a strong and flavorful cocktail made with vodka, tequila, rum, gin, triple sec, lemon juice, and a splash of cola. Despite its name, it contains no tea."
+    },
+    {
+        "id": "negroni",
+        "name": "Negroni",
+        "desc": "A bitter-sweet classic made with Campari, gin, and red vermouth.",
+        "img": "../images/cocktails/negroni.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "gin",
+        "details": "Negroni is an iconic Italian cocktail made with equal parts Campari, gin, and sweet vermouth. It's known for its bold flavor and bright red color, usually garnished with orange peel."
+    },
+    {
+        "id": "caipirinha",
+        "name": "Caipirinha",
+        "desc": "Brazil's national drink made with cachaça, lime, and sugar.",
+        "img": "../images/cocktails/caipirinha.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "rum",
+        "details": "Caipirinha is a refreshing Brazilian cocktail made with cachaça, lime wedges, and sugar. It’s served over crushed ice and is known for its bold and tangy flavor."
+    },
+    {
+        "id": "bloodymary",
+        "name": "Bloody Mary",
+        "desc": "A bold cocktail made with tomato juice, vodka, and spices.",
+        "img": "../images/cocktails/bloodymary.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "vodka",
+        "details": "Bloody Mary is prepared with vodka, tomato juice, lemon juice, Worcestershire sauce, Tabasco, black pepper, and celery. It is typically served as a brunch drink."
+    },
+    {
+        "id": "mai-tai",
+        "name": "Mai Tai",
+        "desc": "A sweet and sour classic with rum, lime, and orange liqueur.",
+        "img": "../images/cocktails/maitai.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "rum",
+        "details": "Mai Tai is a tropical tiki cocktail made with dark rum, lime juice, curaçao, and orgeat syrup. It's fruity, exotic, and perfect for summer."
+    },
+    {
+        "id": "white-russian",
+        "name": "White Russian",
+        "desc": "A smooth cocktail with vodka, coffee liqueur, and cream.",
+        "img": "../images/cocktails/whiterussian.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "vodka",
+        "details": "White Russian is made by layering cream over a mix of vodka and coffee liqueur. It's sweet, rich, and indulgent."
+    },
+    {
+        "id": "sangria",
+        "name": "Sangria",
+        "desc": "A Spanish drink made with wine and fresh fruits.",
+        "img": "../images/cocktails/sangria.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "wine",
+        "details": "Sangria is a Spanish punch made with red (or white) wine, orange juice, brandy, and seasonal fruits. It is served cold and great for sharing."
+    },
+    {
+        "id": "mocktailberry",
+        "name": "Berry Mocktail",
+        "desc": "A non-alcoholic refreshment made with mixed berries.",
+        "img": "../images/cocktails/mocktailberry.png",
+        "type": "non-alcoholic",
+        "featured": false,
+        "base": "non-alcoholic",
+        "details": "This fruity mocktail is made with strawberries, blackberries, lime juice, and sparkling water. It’s refreshing and alcohol-free."
+    },
+    {
+        "id": "ginfizz",
+        "name": "Gin Fizz",
+        "desc": "A refreshing classic made with gin, lemon juice, and soda.",
+        "img": "../images/cocktails/ginfizz.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "gin",
+        "details": "Gin Fizz is a fizzy and light cocktail made with gin, fresh lemon juice, sugar syrup, and soda. It has a bubbly texture and bright citrus flavor."
+    },
+    {
+        "id": "tequila-sunrise",
+        "name": "Tequila Sunrise",
+        "desc": "A colorful, sweet drink made with tequila, orange juice, and grenadine.",
+        "img": "../images/cocktails/tequilasunrise.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "tequila",
+        "details": "Tequila Sunrise is known for its stunning gradient appearance, made with tequila, fresh orange juice, and grenadine syrup. It’s sweet and easy to enjoy."
+    },
+    {
+        "id": "bramble",
+        "name": "Bramble",
+        "desc": "A modern classic with gin, blackberry liqueur, and lemon juice.",
+        "img": "../images/cocktails/bramble.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "gin",
+        "details": "Bramble is made with gin, fresh lemon juice, sugar syrup, and blackberry liqueur. It has a fruity and tart flavor profile with a hint of sweetness."
+    },
+    {
+        "id": "mocktail-citrusmint",
+        "name": "Citrus Mint Cooler",
+        "desc": "A summer mocktail with lime, orange, and mint.",
+        "img": "../images/cocktails/citrusmint.png",
+        "type": "non-alcoholic",
+        "featured": false,
+        "base": "non-alcoholic",
+        "details": "This non-alcoholic cooler combines fresh lime, orange juice, mint, and soda. It’s revitalizing and perfect for hot days."
+    },
+    {
+        "id": "oldfashioned",
+        "name": "Old Fashioned",
+        "desc": "A classic made with bourbon whiskey, sugar, and bitters.",
+        "img": "../images/cocktails/oldfashioned.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "whiskey",
+        "details": "Old Fashioned is one of the oldest known cocktails, made with bourbon, a sugar cube, a few dashes of Angostura bitters, and an orange peel for garnish."
+    },
+    {
+        "id": "manhattan",
+        "name": "Manhattan",
+        "desc": "A classic bar cocktail with rye whiskey, vermouth, and bitters.",
+        "img": "../images/cocktails/manhattan.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "whiskey",
+        "details": "Manhattan is made by stirring rye whiskey (or bourbon), sweet red vermouth, and Angostura bitters with ice. Served in a cocktail glass and garnished with a cherry."
+    },
+    {
+        "id": "daiquiri",
+        "name": "Daiquiri",
+        "desc": "A simple yet elegant cocktail with rum, lime juice, and sugar.",
+        "img": "../images/cocktails/daiquiri.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "rum",
+        "details": "Classic Daiquiri is made by shaking white rum, fresh lime juice, and sugar syrup with ice. It's served chilled and has a tropical, refreshing flavor."
+    },
+    {
+        "id": "amaretto-sour",
+        "name": "Amaretto Sour",
+        "desc": "A sweet-and-sour classic with Amaretto, lemon juice, and syrup.",
+        "img": "../images/cocktails/amarettosour.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "liqueur",
+        "details": "Amaretto Sour combines almond-flavored Amaretto liqueur with fresh lemon juice and sugar syrup. It’s smooth and easy to drink."
+    },
+    {
+        "id": "cuba-libre",
+        "name": "Cuba Libre",
+        "desc": "A classic mix of rum, lime juice, and cola.",
+        "img": "../images/cocktails/cubalibre.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "rum",
+        "details": "Cuba Libre is made with white rum, freshly squeezed lime juice, and cola. It's refreshing and very easy to enjoy, often served with lime wedge."
+    },
+    {
+        "id": "french-75",
+        "name": "French 75",
+        "desc": "An elegant cocktail with gin, lemon juice, sugar, and champagne.",
+        "img": "../images/cocktails/french75.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "gin",
+        "details": "French 75 combines gin, fresh lemon juice, and sugar syrup topped with champagne. It’s fizzy, citrusy, and perfect for celebrations."
+    },
+    {
+        "id": "paloma",
+        "name": "Paloma",
+        "desc": "A light and refreshing drink made with tequila and grapefruit juice.",
+        "img": "../images/cocktails/paloma.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "tequila",
+        "details": "Paloma is made with tequila, fresh grapefruit juice, lime, and soda water. It balances sweet, sour, and slightly bitter flavors beautifully."
+    },
+    {
+        "id": "tom-collins",
+        "name": "Tom Collins",
+        "desc": "A classic and refreshing cocktail with gin, lemon, syrup, and soda.",
+        "img": "../images/cocktails/tomcollins.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "gin",
+        "details": "Tom Collins is made with gin, fresh lemon juice, sugar syrup, and soda water. It's served over ice in a tall glass and garnished with lemon slice or cherry."
+    },
+    {
+        "id": "bellini",
+        "name": "Bellini",
+        "desc": "A light, fruity cocktail made with peach purée and prosecco.",
+        "img": "../images/cocktails/bellini.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "wine",
+        "details": "Bellini is an Italian brunch cocktail made with fresh peach purée and sparkling prosecco. It’s slightly sweet and bubbly with elegant fruity notes."
+    },
+    {
+        "id": "dark-n-stormy",
+        "name": "Dark 'n Stormy",
+        "desc": "A spicy and strong drink with dark rum and ginger beer.",
+        "img": "../images/cocktails/darknstormy.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "rum",
+        "details": "Dark 'n Stormy is made by combining dark rum and ginger beer, often garnished with lime. It’s bold, slightly spicy, and very refreshing."
+    },
+    {
+        "id": "mint-julep",
+        "name": "Mint Julep",
+        "desc": "A refreshing classic with mint, bourbon, and sugar.",
+        "img": "../images/cocktails/mintjulep.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "whiskey",
+        "details": "Mint Julep is a traditional Southern cocktail made with bourbon whiskey, fresh mint leaves, sugar, and crushed ice. It's popular during the summer, especially at the Kentucky Derby."
+    },
+    {
+        "id": "blue-lagoon",
+        "name": "Blue Lagoon",
+        "desc": "A tropical and colorful cocktail with vodka, blue curaçao, and lemonade.",
+        "img": "../images/cocktails/bluelagoon.png",
+        "type": "alcoholic",
+        "featured": false,
+        "base": "vodka",
+        "details": "Blue Lagoon catches the eye with its vibrant blue color. It’s made with vodka, blue curaçao liqueur, and lemonade, offering a fruity and refreshing taste."
+    },
+    {
+        "id": "mocktail-mango-chili",
+        "name": "Mango Chili Mocktail",
+        "desc": "An exotic mocktail with mango purée, lime, and a hint of chili.",
+        "img": "../images/cocktails/mangochili.png",
+        "type": "non-alcoholic",
+        "featured": false,
+        "base": "non-alcoholic",
+        "details": "This alcohol-free drink blends mango purée, fresh lime juice, chili powder, and soda water. It offers a sweet, sour, and lightly spicy tropical experience."
+    }
+]

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ✅ SEO uyumlu başlık ve açıklama -->
+    <title>Lara Tekel & Shop </title>
+    <meta name="description"
+        content="Lara Tekel & Shop in Kartepe, discover alcoholic beverages, promotions, cocktail suggestions, and more. Visit our website!">
+
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <!-- ✅ Performans iyileştirme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- ✅ Stil dosyaları -->
+    <link rel="stylesheet" href="../style.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- ✅ Font Awesome (ikonlar için) -->
+    <script src="https://kit.fontawesome.com/c80fbdec94.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+    <!-- ✅ Loading animation -->
+    <div class="wrapper">
+        <div class="glass-wrapper">
+            <div class="glass">
+                <div class="beer">
+                    <div class="foam"><span class="foambubble"></span><span class="foambubble"></span><span
+                            class="foambubble"></span><span class="foambubble"></span><span class="foambubble"></span>
+                    </div>
+                    <div class="bubbles"><span class="bubble"></span><span class="bubble"></span><span
+                            class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span
+                            class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span
+                            class="bubble"></span></div>
+                </div>
+            </div>
+            <div class="foamtop"><span class="ft-bubble"></span><span class="ft-bubble"></span><span
+                    class="ft-bubble"></span><span class="ft-bubble"></span></div>
+            <div class="coaster"></div>
+        </div>
+    </div>
+
+    <!-- ✅ Coming Soon Overlay -->
+    <div class="coming-soon-overlay">
+        <div class="coming-inner">
+            <h1>LARA TEKEL & SHOP</h1>
+            <p>Coming Soon...</p>
+            <div class="dots-loader">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ navbar -->
+    <header class="navbar">
+        <div class="logo">LARA TEKEL & SHOP</div>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="navlinks">
+                <li class="nav-item"><a href="#hero" class="nav-expand"><i class="fa-solid fa-house"></i><span
+                            class="nav-label"> HOME</span></a></li>
+                <li class="nav-item"><a href="#productBar" class="nav-expand"><i class="fa-solid fa-beer-mug-empty"></i>
+                        <span class="nav-label"> PRODUCTS</span></a></li>
+                <li class="nav-item"><a href="#campaigns-section" class="nav-expand"><i class="fas fa-tags"></i> <span
+                            class="nav-label"> CAMPAIGNS</span></a></li>
+                <li class="nav-item"><a href="cocktails.html#all-cocktail" class="nav-expand"><i
+                            class="fa-solid fa-martini-glass"></i><span class="nav-label"> COCKTAILS</span></a>
+                </li>
+                <li class="nav-item"><a href="#about-us" class="nav-expand"><i class="fas fa-store"> </i> <span
+                            class="nav-label"> ABOUT US</span></a></li>
+                <li class="nav-item"><a href="#working-hours" class="nav-expand"><i class="fa-solid fa-clock"></i> <span
+                            class="nav-label"> WORKING HOURS</span></a></li>
+
+                <li class="nav-item lang-btn">
+                    <a href="../index.html"><i class="fas fa-globe"></i> TR </a>
+                </li>
+
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- ✅ Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-section">
+            <h1 class="title1">LARA</h1>
+            <h1 class="title2">TEKEL & SHOP</h1>
+            <h3 class="p1">FOR COCKTAIL SUGGESTIONS</h3>
+            <button class="herobutton"><span>CLICK HERE</span></button>
+        </div>
+    </section>
+
+    <!-- ✅ Ürünler -->
+    <section class="side-section-wrapper" id="productBar">
+        <section class="special-products">
+            <h2>Special Products</h2>
+            <button class="scroll-btn left">&#60;</button>
+            <button class="scroll-btn right">&#62;</button>
+
+            <div class="product-bar" id="productBar">
+                <div class="product" data-title="jack daniels" data-desc="Description 1">
+                    <img src="../images/sise1.png" alt="Bottle 1" />
+                </div>
+                <div class="product" data-title="jack daniels" data-desc="Description 1">
+                    <img src="../images/sise1.png" alt="Bottle 1" />
+                </div>
+                <div class="product" data-title="jack daniels" data-desc="Description 1">
+                    <img src="../images/sise1.png" alt="Bottle 1" />
+                </div>
+                <div class="product" data-title="jack daniels" data-desc="Description 1">
+                    <img src="../images/sise1.png" alt="Bottle 1" />
+                </div>
+                <div class="product" data-title="jack daniels" data-desc="Description 1">
+                    <img src="../images/sise1.png" alt="Bottle 1" />
+                </div>
+                <div class="product" data-title="jack daniels" data-desc="Description 1">
+                    <img src="../images/sise1.png" alt="Bottle 1" />
+                </div>
+                <div class="product" data-title="jack daniels" data-desc="Description 1">
+                    <img src="../images/sise1.png" alt="Bottle 1" />
+                </div>
+
+            </div>
+
+            <div class="product-detail">
+                <img src="sise1.png" alt="Selected product" id="detail-img" />
+                <div class="product-info">
+                    <h3 id="detail-title"></h3>
+                    <p id="detail-desc"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campaigns -->
+        <section class="campaigns-section" id="campaigns-section">
+            <h2>Campaigns</h2>
+            <div class="campaigns-wrapper">
+                <div class="campaign-card">
+                    <h3>%10-%20 Discount</h3>
+                    <p>Don't miss out on the opportunities for selected products!</p>
+                    <button>View</button>
+                </div>
+                <div class="campaign-card">
+                    <h3>Products</h3>
+                    <p>-</p>
+                    <button>Start Shopping</button>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Cocktails -->
+    <section class="cocktail-section box-wrapper" id="cocktail-section">
+
+        <div class="cocktail-header">
+            <h2 class="cocktail-title">Popular Cocktails</h2>
+        </div>
+
+        <div class="cocktail-3d-carousel">
+            <button class="cocktail-btn left" onclick="rotateCarousel(-1)">&#10094;</button>
+
+            <div class="carousel-container">
+                <div class="cocktail-carousel" id="cocktailCarousel">
+                    <!-- coctails.json -->
+                </div>
+            </div>
+
+            <button class="cocktail-btn right" onclick="rotateCarousel(1)">&#10095;</button>
+        </div>
+
+        <div class="cocktail-pagination"></div>
+        <!-- script.js -->
+
+
+        <a href="cocktails.html" class="see-all-button">View All</a>
+    </section>
+
+    <!-- about-us -->
+    <section class="side-section-wrapper">
+        <section class="about-us" id="about-us">
+            <h2>About Us</h2>
+            <div class="about-gallery">
+                <img src="../images/laratekel_1.png" alt="Mekan 1" onclick="openPopup(this.src)" />
+                <img src="../images/laratekel_1.png" alt="Mekan 2" onclick="openPopup(this.src)" />
+                <img src="../images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
+                <img src="../images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
+                <img src="../images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
+                <img src="../images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
+                <img src="../images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
+                <img src="../images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
+            </div>
+
+            <div class="about-card">
+                <p>
+                    Lara Tekel & Shop, founded by <strong>Ebru Korkmaz</strong> and <strong>Murat Korkmaz</strong> in
+                    Kartepe, Kocaeli, aims to offer quality and diverse alcoholic beverages at affordable prices along
+                    with friendly and reliable service.
+
+                    We welcome you with our special campaigns and carefully selected cocktail suggestions. Thank you to
+                    everyone who chooses us.
+
+                </p>
+            </div>
+        </section>
+
+        <!-- Working Hours -->
+        <section class="work-hours-section" id="working-hours">
+            <h2>Working Hours</h2>
+            <div class="work-hours">
+                <div class="work-card">
+                    <h3>Monday</h3>
+                    <p>09:00 - 00:00</p>
+                    <h3>Tuesday</h3>
+                    <p>09:00 - 00:00</p>
+                    <h3>Wednesday</h3>
+                    <p>09:00 - 00:00</p>
+                    <h3>Thursday</h3>
+                    <p>09:00 - 00:00</p>
+                    <h3>Friday</h3>
+                    <p>09:00 - 00:00</p>
+                    <h3>Saturday</h3>
+                    <p>09:00 - 00:00</p>
+                    <h3>Sunday</h3>
+                    <p>09:00 - 00:00</p>
+
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Google Reviews -->
+    <section id="google-reviews">
+        <div class="reviews">
+            <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+            <script src="https://static.elfsight.com/platform/platform.js" async></script>
+            <div class="elfsight-app-215bd6e9-2cf7-416e-8b07-0a8892c86679" data-elfsight-app-lazy></div>
+        </div>
+    </section>
+
+    <!-- ✅ Footer -->
+    <div class="site-footer">
+        <div class="footer-container">
+
+            <!-- ABOUT -->
+            <div class="footer-column">
+                <h2>About Us</h2>
+                <p>LARA TEKEL & SHOP, we offer the highest quality drinks in Kartepe at the most affordable prices.
+                    We are here with special options to suit every taste.</p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/laratekel/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+
+
+            <!-- Contact -->
+            <div class="footer-column">
+                <h2>Order Now</h2>
+                <p><i class="fa-solid fa-phone"></i> Order Line:</p>
+                <p><a href="tel:+905326121441" class="phone-link">+90 532 612 14 41</a></p>
+                <p><a href="tel:+905335576225" class="phone-link">+90 533 557 62 25</a></p>
+
+
+                <p><i class="fa-regular fa-clock"></i> Working Hours: 9:00 - 00:00</p>
+                <a href="https://wa.me/905335576225" target="_blank" class="order-button">Order Now</a>
+            </div>
+
+            <!-- Map -->
+            <div class="footer-column footer-map">
+                <h2>Location</h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.0659285397833!2d30.030868699999996!3d40.738574799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb519eefa327bd%3A0x98393dc30a450245!2sLara%20Tekel%20%26%20shop!5e0!3m2!1str!2str!4v1752669643582!5m2!1str!2str"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 LARA TEKEL & SHOP | All rights reserved. <br>
+            Designed and coded by <a href="https://github.com/larakorkmaz" target="_blank">Lara Korkmaz</a>.
+        </div>
+
+    </div>
+
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/905335576225" target="_blank" class="whatsapp-button" aria-label="WhatsApp">
+        <img src="../images/whatsapp-icon.png" alt="WhatsApp" />
+    </a>
+
+    <div class="image-popup" id="popup">
+        <span class="close-popup" onclick="closePopup()">×</span>
+        <img id="popup-img" src="" alt="Büyük görsel">
+    </div>
+
+</body>
+
+<script src="../script.js"></script>
+
+</html>

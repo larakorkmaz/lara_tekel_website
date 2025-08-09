@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Cocktails | Lara Tekel & Shop</title>
+    <meta name="description"
+        content="Discover cocktail recipes, promotions, and more at Lara Tekel & Shop in Kartepe. Visit our website!">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../cocktails.css" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c80fbdec94.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- ✅ NAVBAR -->
+    <header class="navbar">
+        <div class="logo">LARA TEKEL & SHOP</div>
+
+        <div class="right-nav">
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+
+            <div class="lang-switcher">
+                <a href="../cocktails.html">
+                    <i class="fas fa-globe"></i> TR
+                </a>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="navlinks">
+                <li class="nav-item">
+                    <a href="../en/index.html#hero" class="nav-expand active">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="nav-label">HOME</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../en/cocktails.html#all-cocktail" class="nav-expand active">
+                        <i class="fa-solid fa-martini-glass"></i>
+                        <span class="nav-label">COCKTAILS</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../en/index.html#hero" class="nav-expand active">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span class="nav-label">GO BACK</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- ✅ COCKTAIL LIST -->
+    <section class="all-cocktail" id="all-cocktail">
+        <h2>All Cocktails</h2>
+
+        <div class="filter-buttons">
+            <input type="text" id="cocktailSearch" placeholder="Search cocktails...">
+            <button onclick="toggleBaseFilter()"><i class="fa-solid fa-filter"></i> Filter</button>
+            <button id="favToggleBtn" onclick="toggleFavoriteView()"><i class="fa-solid fa-heart"></i>
+                Favorites</button>
+        </div>
+
+        <div id="baseFilterPanel" class="base-filter hidden">
+            <label><input type="checkbox" value="whiskey" onchange="applyAllFilters()"> Whiskey-Based</label>
+            <label><input type="checkbox" value="gin" onchange="applyAllFilters()"> Gin-Based</label>
+            <label><input type="checkbox" value="rum" onchange="applyAllFilters()"> Rum-Based</label>
+            <label><input type="checkbox" value="vodka" onchange="applyAllFilters()"> Vodka-Based</label>
+            <label><input type="checkbox" value="tequila" onchange="applyAllFilters()"> Tequila-Based</label>
+            <label><input type="checkbox" value="liqueur" onchange="applyAllFilters()"> Liqueur-Based</label>
+            <label><input type="checkbox" value="coffee" onchange="applyAllFilters()"> Coffee-Based</label>
+            <label><input type="checkbox" value="non-alcoholic" onchange="applyAllFilters()"> Non-Alcoholic</label>
+            <button onclick="clearBaseFilter()">Clear</button>
+        </div>
+
+
+        <div class="cocktail-grid" id="cocktailGrid"></div>
+
+        <div class="pagination" id="pagination"></div>
+
+
+
+    </section>
+
+    <!-- Modal (POP-UP) -->
+    <div class="modal-overlay" id="cocktailModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <img id="modalImage" src="" alt="Cocktail Image" />
+            <h3 id="modalTitle">Cocktail Name</h3>
+            <p id="modalDesc">Detailed description will be here.</p>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="../cocktails.js"></script>
+
+
+</body>
+
+</html>
