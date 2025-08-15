@@ -4,10 +4,10 @@
     box-sizing: border-box;
 }
 
-/* Her şeyi gizle
+/* Her şeyi gizle */
 body>*:not(.coming-soon-overlay) {
     display: none;
-} */
+} 
 
 body {
     background-color: #222;
@@ -1918,4 +1918,5 @@ body {
         opacity: 1;
     }
 }
+
 
