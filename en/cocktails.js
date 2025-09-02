@@ -2,6 +2,8 @@
 let allCocktails = [];
 let filteredCocktails = [];
 let currentPage = 1;
+let _lastPage = 1;
+
 const itemsPerPage = 12;
 let activeBases = [];
 let favoriteMode = false;
@@ -35,7 +37,7 @@ function renderCocktails(cocktailList) {
     const visibleCocktails = cocktailList.slice(startIndex, endIndex);
 
     if (visibleCocktails.length === 0) {
-        container.innerHTML = '<p style="grid-column: 1 / -1; text-align: center;">Hiç kokteyl bulunamadı 🥲</p>';
+        container.innerHTML = '<p style="grid-column: 1 / -1; text-align: center;">No cocktails found... 🥲</p>';
         document.getElementById("pagination").innerHTML = "";
         return;
     }
@@ -62,6 +64,11 @@ function renderCocktails(cocktailList) {
 
         container.appendChild(card);
     });
+
+    if (_lastPage !== currentPage) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        _lastPage = currentPage;
+    }
 
     renderPagination(cocktailList);
 }
