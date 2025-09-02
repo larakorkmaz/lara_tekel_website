@@ -5,10 +5,10 @@
     box-sizing: border-box;
 }
 
-/* Her şeyi gizle 
+/* Her şeyi gizle */
 body>*:not(.coming-soon-overlay) {
     display: none;
-}*/
+}
 
 
 html,
@@ -3062,3 +3062,4 @@ body.no-scroll {
 .terms-list li {
     margin-bottom: 10px;
 }
+
