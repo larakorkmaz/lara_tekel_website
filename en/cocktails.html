@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Cocktails | Lara Tekel & Shop</title>
     <meta name="description"
-        content="Discover cocktail recipes, promotions, and more at Lara Tekel & Shop in Kartepe. Visit our website!">
+        content="Kartepe'deki Lara Tekel & Shop'ta alkollü içecekler, kampanyalar, kokteyl önerileri ve daha fazlası. Web sitemizi ziyaret edin!">
 
-    <!-- CSS Files -->
+    <!-- ✅ CSS Dosyaları -->
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../cocktails.css" />
 
-    <!-- Google Font -->
+    <!-- ✅ Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
+    <!-- ✅ Font Awesome -->
     <script src="https://kit.fontawesome.com/c80fbdec94.js" crossorigin="anonymous"></script>
 </head>
 
@@ -24,63 +24,47 @@
     <!-- ✅ NAVBAR -->
     <header class="navbar">
         <div class="logo">LARA TEKEL & SHOP</div>
-
-        <div class="right-nav">
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span><span></span><span></span>
-            </div>
-
-            <div class="lang-switcher">
-                <a href="../cocktails.html">
-                    <i class="fas fa-globe"></i> TR
-                </a>
-            </div>
-        </div>
-
         <nav>
             <ul class="navlinks">
                 <li class="nav-item">
-                    <a href="../en/index.html#hero" class="nav-expand active">
-                        <i class="fa-solid fa-house"></i>
-                        <span class="nav-label">HOME</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="../en/cocktails.html#all-cocktail" class="nav-expand active">
-                        <i class="fa-solid fa-martini-glass"></i>
-                        <span class="nav-label">COCKTAILS</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="../en/index.html#hero" class="nav-expand active">
+                    <a href="index.html#hero" class="nav-expand active">
                         <i class="fa-solid fa-arrow-left"></i>
                         <span class="nav-label">GO BACK</span>
                     </a>
+                </li>
+                <li class="nav-item lang-btn">
+                    <a href="../cocktails.html"><i class="fas fa-globe"></i> TR </a>
                 </li>
             </ul>
         </nav>
     </header>
 
+    <!-- ✅ HAMBURGER -->
+    <button class="hamburger" aria-label="Menüyü aç" aria-controls="mobile-drawer" aria-expanded="false">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </button>
 
     <!-- ✅ COCKTAIL LIST -->
     <section class="all-cocktail" id="all-cocktail">
-        <h2>All Cocktails</h2>
+        <h2>All Cocktail Recipes</h2>
 
         <div class="filter-buttons">
             <input type="text" id="cocktailSearch" placeholder="Search cocktails...">
             <button onclick="toggleBaseFilter()"><i class="fa-solid fa-filter"></i> Filter</button>
             <button id="favToggleBtn" onclick="toggleFavoriteView()"><i class="fa-solid fa-heart"></i>
-                Favorites</button>
+                My Favorites</button>
         </div>
 
         <div id="baseFilterPanel" class="base-filter hidden">
-            <label><input type="checkbox" value="whiskey" onchange="applyAllFilters()"> Whiskey-Based</label>
-            <label><input type="checkbox" value="gin" onchange="applyAllFilters()"> Gin-Based</label>
-            <label><input type="checkbox" value="rum" onchange="applyAllFilters()"> Rum-Based</label>
-            <label><input type="checkbox" value="vodka" onchange="applyAllFilters()"> Vodka-Based</label>
-            <label><input type="checkbox" value="tequila" onchange="applyAllFilters()"> Tequila-Based</label>
-            <label><input type="checkbox" value="liqueur" onchange="applyAllFilters()"> Liqueur-Based</label>
-            <label><input type="checkbox" value="coffee" onchange="applyAllFilters()"> Coffee-Based</label>
+            <label><input type="checkbox" value="whiskey" onchange="applyAllFilters()"> Whiskey Based</label>
+            <label><input type="checkbox" value="gin" onchange="applyAllFilters()"> Gin Based</label>
+            <label><input type="checkbox" value="rum" onchange="applyAllFilters()"> Rum Based</label>
+            <label><input type="checkbox" value="vodka" onchange="applyAllFilters()"> Vodka Based</label>
+            <label><input type="checkbox" value="tequila" onchange="applyAllFilters()"> Tequila Based</label>
+            <label><input type="checkbox" value="liqueur" onchange="applyAllFilters()"> Liqueur Based</label>
+            <label><input type="checkbox" value="coffee" onchange="applyAllFilters()"> Coffee Based</label>
             <label><input type="checkbox" value="non-alcoholic" onchange="applyAllFilters()"> Non-Alcoholic</label>
             <button onclick="clearBaseFilter()">Clear</button>
         </div>
@@ -94,7 +78,7 @@
 
     </section>
 
-    <!-- Modal (POP-UP) -->
+    <!-- ✅ Modal -->
     <div class="modal-overlay" id="cocktailModal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">×</span>
@@ -103,9 +87,25 @@
             <p id="modalDesc">Detailed description will be here.</p>
         </div>
     </div>
+    
+
+    <!-- ✅ DRAWER -->
+    <div class="drawer-backdrop" hidden></div>
+
+    <nav id="mobile-drawer" class="drawer" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="drawer__header">
+            <span class="drawer__title">Menü</span>
+        </div>
+
+        <ul class="drawer__list">
+            <li style="--i:1"><a href="#hero"><i class="fa-solid fa-arrow-left"></i> GERI DON</a></li>
+            <li style="--i:7"><a href="en/products.html"><i class="fas fa-globe"></i> English</a></li>
+        </ul>
+    </nav>
+
 
     <script src="../script.js"></script>
-    <script src="../cocktails.js"></script>
+    <script src="cocktails.js"></script>
 
 
 </body>
