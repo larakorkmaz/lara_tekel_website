@@ -1,7 +1,9 @@
-// JSON'dan tüm kokteylleri yükle
+// Load all cocktails from JSON
 let allCocktails = [];
 let filteredCocktails = [];
 let currentPage = 1;
+let _lastPage = 1;
+
 const itemsPerPage = 12;
 let activeBases = [];
 let favoriteMode = false;
@@ -15,9 +17,9 @@ fetch("cocktails.json")
     })
     .catch(err => console.error("Kokteyl verileri alınamadı", err));
 
-// Ana render fonksiyonu
+// Main render function
 function renderCocktails(cocktailList) {
-    // Favorileri yukarı taşı
+    // Move favorites to the top
     cocktailList.sort((a, b) => {
         const favs = getFavorites();
         const isAFav = favs.includes(a.id);
@@ -63,10 +65,15 @@ function renderCocktails(cocktailList) {
         container.appendChild(card);
     });
 
+    if (_lastPage !== currentPage) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        _lastPage = currentPage;
+    }
+
     renderPagination(cocktailList);
 }
 
-// Sayfalama oluştur
+// Create pagination
 function renderPagination(cocktailList) {
     const totalPages = Math.ceil(cocktailList.length / itemsPerPage);
     const pagination = document.getElementById("pagination");
@@ -84,7 +91,7 @@ function renderPagination(cocktailList) {
     }
 }
 
-// Modal açma/kapatma
+// Open/close modal
 function openModal(card) {
     document.getElementById('modalTitle').textContent = card.getAttribute('data-title');
     document.getElementById('modalDesc').textContent = card.getAttribute('data-desc');
@@ -96,7 +103,7 @@ function closeModal() {
     document.getElementById('cocktailModal').style.display = 'none';
 }
 
-// Favori işlemleri
+// Favorite operations
 function toggleFav(iconWrapper) {
     const icon = iconWrapper.querySelector("i");
     const card = iconWrapper.closest(".cocktail-card");
@@ -122,13 +129,13 @@ function getFavorites() {
     return JSON.parse(localStorage.getItem("favorites")) || [];
 }
 
-// Filtre paneli aç/kapa
+// Filter panel open/close
 function toggleBaseFilter() {
     const panel = document.getElementById("baseFilterPanel");
     panel.classList.toggle("visible");
 }
 
-// Favori görünüm toggle
+// Favorite view toggle
 function toggleFavoriteView() {
     favoriteMode = !favoriteMode;
     const btn = document.getElementById("favToggleBtn");
@@ -136,7 +143,7 @@ function toggleFavoriteView() {
     applyAllFilters();
 }
 
-// Tüm filtreleri uygula
+// Apply all filters
 function applyAllFilters() {
     const checkboxes = document.querySelectorAll("#baseFilterPanel input[type='checkbox']");
     activeBases = Array.from(checkboxes)
@@ -160,7 +167,7 @@ function applyAllFilters() {
     renderCocktails(filteredCocktails);
 }
 
-// Filtre temizle
+// Clean filter
 function clearBaseFilter() {
     document.querySelectorAll("#baseFilterPanel input[type='checkbox']").forEach(cb => cb.checked = false);
     activeBases = [];
@@ -171,7 +178,7 @@ function clearBaseFilter() {
     renderCocktails(filteredCocktails);
 }
 
-// Arama kutusu
+// Search box
 const searchInput = document.getElementById("cocktailSearch");
 searchInput.addEventListener("keyup", () => {
     const query = searchInput.value.toLowerCase();
