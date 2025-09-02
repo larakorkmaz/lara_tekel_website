@@ -6,69 +6,145 @@ const animationDuration = 800;
 let carousel = null;
 let cocktails = [];
 
-// === NAVBAR ===
-function toggleMenu() {
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.navlinks');
-  const body = document.body;
+// === HAMBURGER / DRAWER ===
+(function () {
+  const btn = document.querySelector('.hamburger');
+  const drawer = document.getElementById('mobile-drawer');
+  const closeBtn = drawer ? drawer.querySelector('.drawer__close') : null;
+  const backdrop = document.querySelector('.drawer-backdrop');
 
-  hamburger.classList.toggle('active');
-  navLinks.classList.toggle('active');
-  body.classList.toggle('menu-open');
+  if (!btn || !drawer || !backdrop) return; // güvenlik
 
-  document.querySelectorAll('.navlinks a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navLinks.classList.remove('active');
-      body.classList.remove('menu-open');
-    });
+  function openDrawer() {
+    btn.classList.add('is-active');
+    drawer.classList.add('is-open');
+    backdrop.classList.add('is-open');
+    backdrop.hidden = false;
+    document.body.classList.add('no-scroll');
+    btn.setAttribute('aria-expanded', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeDrawer() {
+    btn.classList.remove('is-active');
+    drawer.classList.remove('is-open');
+    backdrop.classList.remove('is-open');
+    document.body.classList.remove('no-scroll');
+    btn.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    setTimeout(() => { backdrop.hidden = true; }, 280);
+  }
+
+  btn.addEventListener('click', () => {
+    drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
   });
-}
+  closeBtn && closeBtn.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
 
-// === ÜRÜNLER ===
-const products = document.querySelectorAll('.product');
-const detailImg = document.getElementById('detail-img');
-const detailTitle = document.getElementById('detail-title');
-const detailDesc = document.getElementById('detail-desc');
-
-products.forEach(product => {
-  product.addEventListener('click', () => {
-    products.forEach(p => p.classList.remove('active'));
-    product.classList.add('active');
-
-    detailImg.src = product.querySelector('img').src;
-    detailImg.alt = product.querySelector('img').alt;
-    detailTitle.textContent = product.dataset.title;
-    detailDesc.textContent = product.dataset.desc;
-
-    const smallRect = product.querySelector('img').getBoundingClientRect();
-    const bigRect = detailImg.getBoundingClientRect();
-
-    const deltaX = smallRect.left - bigRect.left;
-    const deltaY = smallRect.top - bigRect.top;
-    const deltaW = smallRect.width / bigRect.width;
-
-    detailImg.style.transformOrigin = 'top left';
-    detailImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${deltaW})`;
-
-    requestAnimationFrame(() => {
-      detailImg.style.transition = 'transform 0.5s ease';
-      detailImg.style.transform = 'none';
-    });
-
-    detailImg.addEventListener('transitionend', () => {
-      detailImg.style.transition = '';
-    }, { once: true });
-
-    document.querySelector('.product-detail').classList.add('visible');
+  // ESC ile kapat (carousel’in ArrowLeft/Right dinleyicisine dokunmuyoruz)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
   });
+
+  // Drawer içindeki linke tıklayınca kapat
+  drawer.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (a) closeDrawer();
+  });
+})();
+
+window.addEventListener('resize', () => {
+  const drawer = document.getElementById('mobile-drawer');
+  const backdrop = document.querySelector('.drawer-backdrop');
+  const btn = document.querySelector('.hamburger');
+  if (window.innerWidth >= 992 && drawer && backdrop && btn) {
+    drawer.classList.remove('is-open');
+    backdrop.classList.remove('is-open');
+    backdrop.hidden = true;
+    btn.classList.remove('is-active');
+    document.body.classList.remove('no-scroll');
+  }
 });
 
-// === ANA ===
-document.addEventListener("DOMContentLoaded", () => {
-  // Öne çıkan kokteyller
-  const container = document.getElementById("featured-cocktails");
+/* =======================================================================
+   ÜRÜNLER — JSON'dan yükleme
+   ======================================================================= */
+function loadProducts() {
+  const detailImg = document.getElementById('detail-img');
+  const detailTitle = document.getElementById('detail-title');
+  const detailDesc = document.getElementById('detail-desc');
+  const detailBox = document.querySelector('.product-detail');
+  const bar = document.getElementById('productBarList');
 
+  if (!bar) return;
+
+  fetch('products.json')
+    .then(res => res.json())
+    .then(list => {
+      if (!Array.isArray(list)) throw new Error('products.json formatı geçersiz');
+
+      // ürünleri çiz
+      bar.innerHTML = list.map(item => `
+        <div class="product"
+             data-title="${item.title}"
+             data-desc="${item.desc}">
+          <img src="${item.img}" alt="${item.title}">
+        </div>
+      `).join('');
+
+      const productEls = bar.querySelectorAll('.product');
+
+      function showProduct(el, animate = false) {
+        productEls.forEach(p => p.classList.remove('active'));
+        el.classList.add('active');
+
+        const imgEl = el.querySelector('img');
+        if (imgEl) {
+          detailImg.src = imgEl.src;
+          detailImg.alt = imgEl.alt;
+        }
+        detailTitle.textContent = el.dataset.title || '';
+        detailDesc.textContent = el.dataset.desc || '';
+        detailBox.classList.add('visible');
+
+        // animasyon sadece tıklamada
+        if (animate && imgEl) {
+          const smallRect = imgEl.getBoundingClientRect();
+          const bigRect = detailImg.getBoundingClientRect();
+          const dx = smallRect.left - bigRect.left;
+          const dy = smallRect.top - bigRect.top;
+          const s = smallRect.width / bigRect.width;
+
+          detailImg.style.transformOrigin = 'top left';
+          detailImg.style.transform = `translate(${dx}px, ${dy}px) scale(${s})`;
+          requestAnimationFrame(() => {
+            detailImg.style.transition = 'transform 0.5s ease';
+            detailImg.style.transform = 'none';
+          });
+          detailImg.addEventListener('transitionend', () => {
+            detailImg.style.transition = '';
+          }, { once: true });
+        }
+      }
+
+      // tıklamalar
+      productEls.forEach(p => p.addEventListener('click', () => showProduct(p, true)));
+
+      // açılışta ilk ürün
+      if (productEls.length) showProduct(productEls[0], false);
+    })
+    .catch(err => console.error('Ürünler yüklenemedi:', err));
+}
+
+/* =======================================================================
+   ANA — sayfa hazır olunca
+   ======================================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+  // Ürünleri JSON'dan yükle
+  loadProducts();
+
+  // Öne çıkan kokteyller (varsa)
+  const container = document.getElementById("featured-cocktails");
   if (container) {
     fetch("cocktails.json")
       .then(res => res.json())
@@ -89,8 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // Ürün kaydırma
-  const productBar = document.querySelector(".product-bar");
+  // Ürün kaydırma okları
+  const productBar = document.getElementById("productBarList");
   const productLeftBtn = document.querySelector(".scroll-btn.left");
   const productRightBtn = document.querySelector(".scroll-btn.right");
 
@@ -113,7 +189,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const cocktailLeftBtn = document.querySelector('.cocktail-btn.left');
   const cocktailRightBtn = document.querySelector('.cocktail-btn.right');
-  const pagination = document.querySelector('.cocktail-pagination');
 
   fetch('cocktails.json')
     .then(res => res.json())
@@ -130,45 +205,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
     .catch(err => {
-      console.error("Cocktails JSON dosyası yüklenemedi:", err);
-      alert("Ürün bilgileri yüklenirken sorun oluştu. Lütfen sayfayı yenileyin.");
-
+      console.warn("Cocktails JSON dosyası yüklenemedi:", err);
       cocktails = [{
         img: "images/cocktails/mocktail.png",
         name: "Demo İçecek",
         desc: "Menü şu an gösterilemiyor"
       }];
-
       createSlides();
       createPagination();
       updateCarousel();
     });
-
-  // Arama
-  const searchInput = document.getElementById("cocktailSearch");
-  const searchBtn = document.getElementById("cocktailSearchBtn");
-
-  function handleSearch() {
-    const query = searchInput.value.trim().toLowerCase();
-    if (!query) return;
-
-    const foundIndex = cocktails.findIndex(c =>
-      c.name.toLowerCase().includes(query)
-    );
-
-    if (foundIndex !== -1) {
-      rotateToIndex(foundIndex);
-    } else {
-      alert("Bu adda bir kokteyl yok 😔");
-    }
-  }
-
-  if (searchInput && searchBtn) {
-    searchBtn.addEventListener("click", handleSearch);
-    searchInput.addEventListener("keydown", e => {
-      if (e.key === "Enter") handleSearch();
-    });
-  }
 
   // Klavye yön tuşları
   document.addEventListener('keydown', (e) => {
@@ -189,7 +235,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// === CAROUSEL ===
+/* =======================================================================
+   CAROUSEL fonksiyonları (seninle aynı)
+   ======================================================================= */
 function createSlides() {
   carousel.innerHTML = '';
   cocktails.forEach((cocktail, index) => {
@@ -327,4 +375,100 @@ function openPopup(src) {
 function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
+
+
+(function () {
+  const list = document.querySelector('.navlinks');
+  if (!list) return;
+
+  const active = list.querySelector('a.is-active') || list.querySelector('a.nav-expand');
+  moveHL(active);
+
+  list.addEventListener('mouseover', (e) => {
+    const a = e.target.closest('a');
+    if (a && list.contains(a)) moveHL(a);
+  });
+  list.addEventListener('mouseleave', () => moveHL(active));
+
+  function moveHL(a) {
+    if (!a) return;
+    // ✨ offset'ler doğrudan .navlinks’e göre olduğu için şaşmaz
+    const x = a.offsetLeft + 10;       // sol/sağ padding telafisi
+    const w = a.offsetWidth - 20;
+    list.style.setProperty('--hl-x', x + 'px');
+    list.style.setProperty('--hl-w', w + 'px');
+  }
+})();
+
+const termsBtn = document.getElementById("termsBtn");
+const termsModal = document.getElementById("termsModal");
+const termsClose = document.getElementById("termsClose");
+
+if (termsBtn && termsModal && termsClose) {
+  termsBtn.addEventListener("click", () => {
+    termsModal.classList.add("show");
+    document.body.classList.add("no-scroll"); // scroll kilitlenir
+  });
+
+  termsClose.addEventListener("click", () => {
+    termsModal.classList.remove("show");
+    document.body.classList.remove("no-scroll");
+  });
+
+  termsModal.addEventListener("click", (e) => {
+    if (e.target === termsModal) {
+      termsModal.classList.remove("show");
+      document.body.classList.remove("no-scroll");
+    }
+  });
+}
+
+// === Şartlar & Koşullar Modal – tek ve tutarlı implementasyon ===
+(function () {
+  const modal = document.getElementById('termsModal');
+  const footerBtn = document.getElementById('termsBtn');
+  const menuLink = document.getElementById('termsLink');
+  const closeBtn = document.getElementById('termsClose');
+  const drawer = document.getElementById('mobile-drawer');
+  const backdrop = document.querySelector('.drawer-backdrop');
+  const burger = document.querySelector('.hamburger');
+
+  if (!modal) return;
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    // Drawer açıksa kapat (opsiyonel ama iyi olur)
+    if (drawer && drawer.classList.contains('is-open')) {
+      drawer.classList.remove('is-open');
+      backdrop?.classList.remove('is-open');
+      backdrop && (backdrop.hidden = true);
+      burger?.classList.remove('is-active');
+      document.body.classList.remove('no-scroll');
+    }
+    // Modalı göster
+    modal.classList.add('show');                // <-- GÖRÜNÜRLÜK
+    modal.setAttribute('aria-hidden', 'false'); // erişilebilirlik
+    document.body.classList.add('no-scroll');   // scroll kilidi
+  }
+
+  function closeModal() {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('no-scroll');
+  }
+
+  footerBtn?.addEventListener('click', openModal);
+  menuLink?.addEventListener('click', openModal);
+  closeBtn?.addEventListener('click', closeModal);
+
+  // Modal dışına tıkla -> kapat
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // ESC ile kapat
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
+  });
+})();
 
