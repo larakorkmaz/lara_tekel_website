@@ -5,29 +5,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ✅ SEO uyumlu başlık ve açıklama -->
+    <!-- ✅ TITLE -->
     <title>Lara Tekel & Shop </title>
     <meta name="description"
         content="Kartepe'deki Lara Tekel & Shop'ta alkollü içecekler, kampanyalar, kokteyl önerileri ve daha fazlası. Web sitemizi ziyaret edin!">
 
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
-    <!-- ✅ Performans iyileştirme -->
+    <!-- ✅ FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- ✅ Stil dosyaları -->
-    <link rel="stylesheet" href="style.css" />
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
         rel="stylesheet">
 
-    <!-- ✅ Font Awesome (ikonlar için) -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- ✅ STYLES -->
+    <link rel="stylesheet" href="style.css" />
+
+
+    <!-- ✅ Font Awesome  -->
     <script src="https://kit.fontawesome.com/c80fbdec94.js" crossorigin="anonymous"></script>
 </head>
 
 
 <body>
+
 
     <!-- ✅ Loading animation -->
     <div class="wrapper">
@@ -49,7 +58,8 @@
         </div>
     </div>
 
-    <!-- ✅ Coming Soon Overlay-->
+
+    <!-- ✅ COMING-SOON
     <div class="coming-soon-overlay">
         <div class="coming-inner">
             <h1>LARA TEKEL & SHOP</h1>
@@ -58,21 +68,19 @@
                 <span></span><span></span><span></span>
             </div>
         </div>
-    </div> 
+    </div>
 
-    <!-- ✅ navbar -->
+
+    <!-- ✅ NAVBAR -->
     <header class="navbar">
         <div class="logo">LARA TEKEL & SHOP</div>
         <nav>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+
             <ul class="navlinks">
                 <li class="nav-item"><a href="#hero" class="nav-expand"><i class="fa-solid fa-house"></i><span
                             class="nav-label"> ANASAYFA</span></a></li>
-                <li class="nav-item"><a href="#productBar" class="nav-expand"><i class="fa-solid fa-beer-mug-empty"></i>
+                <li class="nav-item"><a href="products.html" class="nav-expand"><i
+                            class="fa-solid fa-beer-mug-empty"></i>
                         <span class="nav-label"> ÜRÜNLER</span></a></li>
                 <li class="nav-item"><a href="#campaigns-section" class="nav-expand"><i class="fas fa-tags"></i> <span
                             class="nav-label"> KAMPANYALAR</span></a></li>
@@ -95,41 +103,47 @@
         </nav>
     </header>
 
+
+    <!-- ✅ HAMBURGER -->
+    <button class="hamburger" aria-label="Menüyü aç" aria-controls="mobile-drawer" aria-expanded="false">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </button>
+
+
     <!-- ✅ Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-section">
-            <h1 class="title1">LARA</h1>
-            <h1 class="title2">TEKEL & SHOP</h1>
-            <h3 class="p1">KOKTEYL ONERILERI ICIN</h3>
-            <button class="herobutton"><span>HEMEN TIKLAYIN</span></button>
+            <div class="titles">
+                <h1 class="title1">LARA</h1>
+                <h2 class="title2">TEKEL & SHOP</h2>
+            </div>
+
+            <div class="bottom-content">
+                <p class="p1">KOKTEYL ÖNERİLERİ İÇİN</p>
+                <button class="herobutton"><a href="cocktails.html#all-cocktail">HEMEN TIKLAYIN</a></button>
+            </div>
+
         </div>
     </section>
 
-    <!-- ✅ Ürünler -->
+
+    <!-- ✅ PRODUCTS -->
     <section class="side-section-wrapper" id="productBar">
         <section class="special-products">
-            <h2>Özel Ürünler</h2>
-            <button class="scroll-btn left">&#60;</button>
-            <button class="scroll-btn right">&#62;</button>
-
-            <div class="product-bar" id="productBar">
-                <div class="product" data-title="jack daniels" data-desc="Açıklama 1">
-                    <img src="images/sise1.png" alt="Şişe 1" />
-                </div>
-                <div class="product" data-title="jack daniels" data-desc="Açıklama 1">
-                    <img src="images/sise1.png" alt="Şişe 1" />
-                </div>
-                <div class="product" data-title="jack daniels" data-desc="Açıklama 1">
-                    <img src="images/sise1.png" alt="Şişe 1" />
-                </div>
-                <div class="product" data-title="jack daniels" data-desc="Açıklama 1">
-                    <img src="images/sise1.png" alt="Şişe 1" />
-                </div>
-
+            <div class="section-header">
+                <h2>Ürünler</h2>
+                <a href="products.html" class="see-all-button">Sipariş Ver</a>
             </div>
 
+            <button class="scroll-btn left">&#10094;</button>
+            <button class="scroll-btn right">&#10095;</button>
+
+            <div class="product-bar" id="productBarList"></div>
+
             <div class="product-detail">
-                <img src="images/sise1.png" alt="Seçilen ürün" id="detail-img" />
+                <img src="" alt="Seçilen ürün" id="detail-img" />
                 <div class="product-info">
                     <h3 id="detail-title"></h3>
                     <p id="detail-desc"></p>
@@ -137,25 +151,23 @@
             </div>
         </section>
 
-        <!-- Kampanyalar -->
+
+        <!-- ✅ CAMPAIGNS -->
         <section class="campaigns-section" id="campaigns-section">
             <h2>Kampanyalar</h2>
             <div class="campaigns-wrapper">
-                <div class="campaign-card">
-                    <h3>%10-%20 İndirim</h3>
-                    <p>Seçili ürünlerde fırsatları kaçırmayın!</p>
-                    <button>İncele</button>
-                </div>
-                <div class="campaign-card">
-                    <h3>urunler</h3>
-                    <p>-</p>
-                    <button>Alışverişe Başla</button>
-                </div>
+                <h3>Su anda herhangi bir kampanyamız bulunmamaktadır.</h3>
+                <!--<div class="campaign-card">
+                    <h3>Su anda herhangi bir kampanyamız bulunmamaktadır takipte kal!</h3>
+                    <p>Su anda herhangi bir kampanyamız bulunmamaktadır takipte kal!</p>
+                    <button>Ürünlere göz at</button>
+                </div>-->
             </div>
         </section>
     </section>
 
-    <!-- KOKTEYL SECTION -->
+
+    <!-- ✅ COCKTAIL SECTION -->
     <section class="cocktail-section box-wrapper" id="cocktail-section">
 
         <div class="cocktail-header">
@@ -181,19 +193,44 @@
         <a href="cocktails.html" class="see-all-button">Tümünü Gör</a>
     </section>
 
-    <!-- Hakkımızda  -->
+
+    <!-- ✅ ABOUT-US  -->
     <section class="side-section-wrapper">
         <section class="about-us" id="about-us">
             <h2>Hakkımızda</h2>
             <div class="about-gallery">
-                <img src="images/laratekel_1.png" alt="Mekan 1" onclick="openPopup(this.src)" />
-                <img src="images/laratekel_1.png" alt="Mekan 2" onclick="openPopup(this.src)" />
-                <img src="images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
-                <img src="images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
-                <img src="images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
-                <img src="images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
-                <img src="images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
-                <img src="images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
+                <img src="images/aboutus/laratekel0.jpg" alt="Mekan 0 " loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="images/aboutus/laratekel1.jpg" alt="Mekan 1 " loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="images/aboutus/laratekel2.jpg" alt="Mekan 2 " loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="images/aboutus/laratekel3.jpg" alt="Mekan 3 " loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="images/aboutus/laratekel4.jpg" alt="Mekan 4 " loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="images/aboutus/laratekel5.jpg" alt="Mekan 5 " loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="images/aboutus/laratekel6.jpg" alt="Mekan 6 " loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="images/aboutus/laratekel7.jpg" alt="Mekan 7 " loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="images/aboutus/laratekel8.jpg" alt="Mekan 8 " loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="images/aboutus/laratekel9.jpg" alt="Mekan 9 " loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="images/aboutus/laratekel10.jpg" alt="Mekan 10 " loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="images/aboutus/laratekel11.jpg" alt="Mekan 11 " loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="images/aboutus/laratekel12.jpg" alt="Mekan 12 " loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="images/aboutus/laratekel13.jpg" alt="Mekan 13 " loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="images/aboutus/laratekel14.jpg" alt="Mekan 14 " loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="images/aboutus/laratekel15.jpg" alt="Mekan 15 " loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
             </div>
 
             <div class="about-card">
@@ -210,32 +247,38 @@
             </div>
         </section>
 
-        <!-- Çalışma Saatleri -->
+
+        <!-- ✅ WORKING-HOURS -->
         <section class="work-hours-section" id="working-hours">
             <h2>Çalışma Saatleri</h2>
             <div class="work-hours">
                 <div class="work-card">
-                    <h3>Pazartesi</h3>
-                    <p>09:00 - 00:00</p>
-                    <h3>Sali</h3>
-                    <p>09:00 - 00:00</p>
-                    <h3>Carsamba</h3>
-                    <p>09:00 - 00:00</p>
-                    <h3>Persembe</h3>
-                    <p>09:00 - 00:00</p>
-                    <h3>Cuma</h3>
-                    <p>09:00 - 00:00</p>
-                    <h3>Cumartesi</h3>
-                    <p>09:00 - 00:00</p>
-                    <h3>Pazar</h3>
-                    <p>09:00 - 00:00</p>
+                    <div class="lt-hours-card" id="ltHours">
+                        <div class="lt-hours-head">
+                            <div class="lt-hours-state">
+                                <span class="lt-dot" id="ltDot" aria-hidden="true"></span>
+                                <span id="ltStateText">Kontrol ediliyor…</span>
+                            </div>
+                            <div class="lt-hours-today">
+                                Bugün: <strong id="ltTodayRange">—</strong>
+                            </div>
+                        </div>
 
+                        <ul class="lt-hours-list" id="ltHoursList"><!-- JS --></ul>
+
+                        <div class="lt-hours-note">
+                            <i class="fa-regular fa-circle-question" aria-hidden="true"></i>
+                            Resmî tatillerde saatler değişiklik gösterebilir.
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
     </section>
 
-    <!-- Google Reviews -->
+
+    <!-- ✅ GOOGLE-REVIEWS -->
     <section id="google-reviews">
         <div class="reviews">
             <!-- Elfsight Google Reviews | Untitled Google Reviews -->
@@ -244,74 +287,135 @@
         </div>
     </section>
 
+
     <!-- ✅ Footer -->
-    <div class="site-footer">
-        <div class="footer-container">
+    <footer>
+        <div class="site-footer">
+            <div class="footer-container">
 
-            <!-- Hakkımızda -->
-            <div class="footer-column">
-                <h2>Hakkımızda</h2>
-                <p>LARA TEKEL & SHOP olarak Kartepe’de en kaliteli içecekleri, en uygun fiyata sunuyoruz. Her damağa
-                    hitap eden özel seçeneklerle sizlerleyiz.</p>
-                <div class="footer-socials">
-                    <a href="https://www.instagram.com/laratekel/"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fas fa-envelope"></i></a>
+
+                <!-- ✅ ABOUT-US -->
+                <div class="footer-column">
+                    <h2>Hakkımızda</h2>
+                    <p>LARA TEKEL & SHOP olarak Kartepe’de en kaliteli içecekleri, en uygun fiyata sunuyoruz. Her damağa
+                        hitap eden özel seçeneklerle sizlerleyiz.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/laratekel/" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
+
+
+                <!-- ✅ CONTACT -->
+                <div class="footer-column">
+                    <h2>Sipariş Ver</h2>
+                    <p><i class="fa-solid fa-phone"></i> Sipariş Hattı:</p>
+                    <p><a href="tel:+905326121441" class="phone-link">+90 532 612 14 41</a></p>
+                    <p><a href="tel:+905335576225" class="phone-link">+90 533 557 62 25</a></p>
+
+
+                    <p><i class="fa-regular fa-clock"></i> Çalışma Saatleri: 9:00 - 00:00</p>
+                    <a href="https://wa.me/905335576225" target="_blank" class="order-button"
+                        rel="noopener noreferrer">Şimdi Sipariş Ver</a>
+                </div>
+
+
+                <!-- ✅ MAP -->
+                <div class="footer-column footer-map">
+                    <h2>Konum</h2>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.0659285397833!2d30.030868699999996!3d40.738574799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb519eefa327bd%3A0x98393dc30a450245!2sLara%20Tekel%20%26%20shop!5e0!3m2!1str!2str!4v1752669643582!5m2!1str!2str"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+
+                <!-- ✅ FOOTER-LEGAL -->
+                <div class="footer-legal">
+                    <button id="termsBtn" class="terms-btn">Şartlar ve Koşullar</button>
+                </div>
+
             </div>
 
 
-
-            <!-- İletişim -->
-            <div class="footer-column">
-                <h2>Sipariş Ver</h2>
-                <p><i class="fa-solid fa-phone"></i> Sipariş Hattı:</p>
-                <p><a href="tel:+905326121441" class="phone-link">+90 532 612 14 41</a></p>
-                <p><a href="tel:+905335576225" class="phone-link">+90 533 557 62 25</a></p>
-
-
-                <p><i class="fa-regular fa-clock"></i> Çalışma Saatleri: 9:00 - 00:00</p>
-                <a href="https://wa.me/905335576225" target="_blank" class="order-button">Şimdi Sipariş Ver</a>
+            <!-- ✅ FOOTER-BOTTOM -->
+            <div class="footer-bottom">
+                © 2025 LARA TEKEL & SHOP | Tüm hakları saklıdır. <br>
+                Tasarımı ve kodlaması <a href="https://github.com/larakorkmaz" target="_blank"
+                    rel="noopener noreferrer">Lara Korkmaz</a> tarafından
+                yapılmıştır.
             </div>
-
-            <!-- Harita -->
-            <div class="footer-column footer-map">
-                <h2>Konum</h2>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.0659285397833!2d30.030868699999996!3d40.738574799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb519eefa327bd%3A0x98393dc30a450245!2sLara%20Tekel%20%26%20shop!5e0!3m2!1str!2str!4v1752669643582!5m2!1str!2str"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-
 
         </div>
-
-        <div class="footer-bottom">
-            © 2025 LARA TEKEL & SHOP | Tüm hakları saklıdır. <br>
-            Tasarımı ve kodlaması <a href="https://github.com/larakorkmaz" target="_blank">Lara Korkmaz</a> tarafından
-            yapılmıştır.
-        </div>
-
-    </div>
-
     </footer>
 
-    <!-- WhatsApp Button -->
+
+    <!-- ✅ WHATSAPP BUTTON -->
     <a href="https://wa.me/905335576225" target="_blank" class="whatsapp-button" aria-label="WhatsApp">
-        <img src="images/whatsapp-icon.png" alt="WhatsApp" />
+        <img src="images/whatsapp-icon.png" alt="WhatsApp ile sipariş ver" />
     </a>
 
+    <!-- ✅ IMG-POPUP -->
     <div class="image-popup" id="popup">
         <span class="close-popup" onclick="closePopup()">×</span>
         <img id="popup-img" src="" alt="Büyük görsel">
     </div>
 
+
+    <!-- ✅ DRAWER -->
+    <div class="drawer-backdrop" hidden></div>
+
+    <nav id="mobile-drawer" class="drawer" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="drawer__header">
+            <span class="drawer__title">Menü</span>
+        </div>
+
+        <ul class="drawer__list">
+            <li style="--i:1"><a href="#hero"><i class="fa-solid fa-house"></i> Anasayfa</a></li>
+            <li style="--i:2"><a href="products.html"><i class="fa-solid fa-beer-mug-empty"></i> Ürünler</a></li>
+            <li style="--i:3"><a href="#campaigns-section"><i class="fas fa-tags"></i> Kampanyalar</a></li>
+            <li style="--i:4"><a href="cocktails.html#all-cocktail"><i class="fa-solid fa-martini-glass"></i>
+                    Kokteyl
+                    Önerileri</a></li>
+            <li style="--i:5"><a href="#about-us"><i class="fas fa-store"></i> Hakkımızda</a></li>
+            <li style="--i:6"><a href="#working-hours"><i class="fa-solid fa-clock"></i> Çalışma Saatleri</a></li>
+            <li style="--i:8">
+                <a href="#" id="termsLink">
+                    <i class="fa-regular fa-file-lines"></i> Şartlar ve Koşullar
+                </a>
+            </li>
+
+            <li style="--i:7"><a href="en/index.html"><i class="fas fa-globe"></i> English</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- ✅ THERMS -->
+    <div id="termsModal" class="terms-modal" aria-hidden="true">
+        <div class="terms-content">
+            <span class="terms-close" id="termsClose">&times;</span>
+            <h2>Şartlar ve Koşullar</h2>
+
+            <ul class="terms-list">
+                <li><strong>⚠️ 18 yaşından küçüklere alkollü içecek ve tütün mamulleri satışı yapılmamaktadır.</strong>
+                </li>
+                <li>Bu web sitesinde yer alan ürün bilgileri yalnızca tanıtım amaçlıdır.</li>
+                <li>Sipariş hattı üzerinden yapılan alışverişlerde, alıcıların 18 yaşından büyük olduğu kabul edilir.
+                </li>
+                <li>Fiyatlar ve kampanyalar stok durumuna göre değişiklik gösterebilir.</li>
+                <li>Resmî tatil günlerinde çalışma saatlerinde farklılık olabilir.</li>
+                <li>Sitemizi ziyaret eden herkes, burada belirtilen şartları kabul etmiş sayılır.</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- ✅ SCRIPTS -->
+    <script src="script.js"></script>
+    <script src="work_hours.js"></script>
+
 </body>
 
-<script src="script.js"></script>
-
 </html>
-
-
-
-
