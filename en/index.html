@@ -5,138 +5,148 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ✅ SEO uyumlu başlık ve açıklama -->
-    <title>Lara Tekel & Shop </title>
+    <!-- ✅ TITLE -->
+    <title>Lara Tekel & Shop</title>
     <meta name="description"
-        content="Lara Tekel & Shop in Kartepe, discover alcoholic beverages, promotions, cocktail suggestions, and more. Visit our website!">
+        content="At Lara Tekel & Shop in Kartepe, discover alcoholic drinks, promotions, cocktail suggestions and more. Visit our website!">
 
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 
-    <!-- ✅ Performans iyileştirme -->
+    <!-- ✅ FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- ✅ Stil dosyaları -->
-    <link rel="stylesheet" href="../style.css" />
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
 
-    <!-- ✅ Font Awesome (ikonlar için) -->
+    <!-- ✅ STYLE -->
+    <link rel="stylesheet" href="../style.css" />
+
+    <!-- ✅ ICON -->
     <script src="https://kit.fontawesome.com/c80fbdec94.js" crossorigin="anonymous"></script>
 </head>
 
-
 <body>
 
-    <!-- ✅ Loading animation -->
+
+    <!-- ✅ LOADING -->
     <div class="wrapper">
         <div class="glass-wrapper">
             <div class="glass">
                 <div class="beer">
-                    <div class="foam"><span class="foambubble"></span><span class="foambubble"></span><span
-                            class="foambubble"></span><span class="foambubble"></span><span class="foambubble"></span>
+                    <div class="foam">
+                        <span class="foambubble"></span><span class="foambubble"></span>
+                        <span class="foambubble"></span><span class="foambubble"></span>
+                        <span class="foambubble"></span>
                     </div>
-                    <div class="bubbles"><span class="bubble"></span><span class="bubble"></span><span
-                            class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span
-                            class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span
-                            class="bubble"></span></div>
+                    <div class="bubbles">
+                        <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+                        <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+                        <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+                    </div>
                 </div>
             </div>
-            <div class="foamtop"><span class="ft-bubble"></span><span class="ft-bubble"></span><span
-                    class="ft-bubble"></span><span class="ft-bubble"></span></div>
+            <div class="foamtop">
+                <span class="ft-bubble"></span><span class="ft-bubble"></span>
+                <span class="ft-bubble"></span><span class="ft-bubble"></span>
+            </div>
             <div class="coaster"></div>
         </div>
     </div>
 
-    <!-- ✅ Coming Soon Overlay -->
-    <div class="coming-soon-overlay">
-        <div class="coming-inner">
-            <h1>LARA TEKEL & SHOP</h1>
-            <p>Coming Soon...</p>
-            <div class="dots-loader">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-    </div>
 
-    <!-- ✅ navbar -->
+    <!-- ✅ COMING SOON 
+  <div class="coming-soon-overlay">
+    <div class="coming-inner">
+      <h1>LARA TEKEL & SHOP</h1>
+      <p>Our website will be live very soon...</p>
+      <div class="dots-loader"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  -->
+
+
+    <!-- ✅ NAVBAR -->
     <header class="navbar">
         <div class="logo">LARA TEKEL & SHOP</div>
         <nav>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
             <ul class="navlinks">
-                <li class="nav-item"><a href="#hero" class="nav-expand"><i class="fa-solid fa-house"></i><span
-                            class="nav-label"> HOME</span></a></li>
-                <li class="nav-item"><a href="#productBar" class="nav-expand"><i class="fa-solid fa-beer-mug-empty"></i>
-                        <span class="nav-label"> PRODUCTS</span></a></li>
-                <li class="nav-item"><a href="#campaigns-section" class="nav-expand"><i class="fas fa-tags"></i> <span
-                            class="nav-label"> CAMPAIGNS</span></a></li>
-                <li class="nav-item"><a href="cocktails.html#all-cocktail" class="nav-expand"><i
-                            class="fa-solid fa-martini-glass"></i><span class="nav-label"> COCKTAILS</span></a>
+                <li class="nav-item">
+                    <a href="#hero" class="nav-expand"><i class="fa-solid fa-house"></i><span class="nav-label">
+                            HOME</span></a>
                 </li>
-                <li class="nav-item"><a href="#about-us" class="nav-expand"><i class="fas fa-store"> </i> <span
-                            class="nav-label"> ABOUT US</span></a></li>
-                <li class="nav-item"><a href="#working-hours" class="nav-expand"><i class="fa-solid fa-clock"></i> <span
-                            class="nav-label"> WORKING HOURS</span></a></li>
-
+                <li class="nav-item">
+                    <a href="products.html" class="nav-expand"><i class="fa-solid fa-beer-mug-empty"></i>
+                        <span class="nav-label"> PRODUCTS</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#campaigns-section" class="nav-expand"><i class="fas fa-tags"></i>
+                        <span class="nav-label"> CAMPAIGNS</span></a>
+                </li>
+                <li class="nav-item">
+                    <!-- English cocktails page lives in en/ -->
+                    <a href="cocktails.html#all-cocktail" class="nav-expand"><i class="fa-solid fa-martini-glass"></i>
+                        <span class="nav-label"> COCKTAIL SUGGESTIONS</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about-us" class="nav-expand"><i class="fas fa-store"></i>
+                        <span class="nav-label"> ABOUT US</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#working-hours" class="nav-expand"><i class="fa-solid fa-clock"></i>
+                        <span class="nav-label"> WORKING HOURS</span></a>
+                </li>
                 <li class="nav-item lang-btn">
+                    <!-- Language switch back to Turkish homepage -->
                     <a href="../index.html"><i class="fas fa-globe"></i> TR </a>
                 </li>
-
             </ul>
-
         </nav>
     </header>
 
-    <!-- ✅ Hero Section -->
+
+    <!-- ✅ HAMBURGER -->
+    <button class="hamburger" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
+    </button>
+
+    <!-- ✅ HERO  -->
     <section class="hero" id="hero">
         <div class="hero-section">
-            <h1 class="title1">LARA</h1>
-            <h1 class="title2">TEKEL & SHOP</h1>
-            <h3 class="p1">FOR COCKTAIL SUGGESTIONS</h3>
-            <button class="herobutton"><span>CLICK HERE</span></button>
+            <div class="titles">
+                <h1 class="title1">LARA</h1>
+                <h2 class="title2">TEKEL & SHOP</h2>
+            </div>
+
+            <div class="bottom-content">
+                <p class="p1">FOR COCKTAIL SUGGESTIONS</p>
+                <button class="herobutton"><a href="cocktails.html#all-cocktail">CLICK NOW</a></button>
+            </div>
         </div>
     </section>
 
-    <!-- ✅ Ürünler -->
+
+    <!-- ✅ PRODUCTS -->
     <section class="side-section-wrapper" id="productBar">
         <section class="special-products">
-            <h2>Special Products</h2>
-            <button class="scroll-btn left">&#60;</button>
-            <button class="scroll-btn right">&#62;</button>
-
-            <div class="product-bar" id="productBar">
-                <div class="product" data-title="jack daniels" data-desc="Description 1">
-                    <img src="../images/sise1.png" alt="Bottle 1" />
-                </div>
-                <div class="product" data-title="jack daniels" data-desc="Description 1">
-                    <img src="../images/sise1.png" alt="Bottle 1" />
-                </div>
-                <div class="product" data-title="jack daniels" data-desc="Description 1">
-                    <img src="../images/sise1.png" alt="Bottle 1" />
-                </div>
-                <div class="product" data-title="jack daniels" data-desc="Description 1">
-                    <img src="../images/sise1.png" alt="Bottle 1" />
-                </div>
-                <div class="product" data-title="jack daniels" data-desc="Description 1">
-                    <img src="../images/sise1.png" alt="Bottle 1" />
-                </div>
-                <div class="product" data-title="jack daniels" data-desc="Description 1">
-                    <img src="../images/sise1.png" alt="Bottle 1" />
-                </div>
-                <div class="product" data-title="jack daniels" data-desc="Description 1">
-                    <img src="../images/sise1.png" alt="Bottle 1" />
-                </div>
-
+            <div class="section-header">
+                <h2>Products</h2>
+                <!-- Goes to TR products until en/products.html exists -->
+                <a href="products.html" class="see-all-button">Order Now</a>
             </div>
 
+            <button class="scroll-btn left">&#10094;</button>
+            <button class="scroll-btn right">&#10095;</button>
+
+            <div class="product-bar" id="productBarList"></div>
+
             <div class="product-detail">
-                <img src="sise1.png" alt="Selected product" id="detail-img" />
+                <img src="" alt="Selected product" id="detail-img" />
                 <div class="product-info">
                     <h3 id="detail-title"></h3>
                     <p id="detail-desc"></p>
@@ -144,175 +154,249 @@
             </div>
         </section>
 
-        <!-- Campaigns -->
+
+        <!-- ✅ CAMPAIGNS -->
         <section class="campaigns-section" id="campaigns-section">
             <h2>Campaigns</h2>
             <div class="campaigns-wrapper">
-                <div class="campaign-card">
-                    <h3>%10-%20 Discount</h3>
-                    <p>Don't miss out on the opportunities for selected products!</p>
-                    <button>View</button>
-                </div>
-                <div class="campaign-card">
-                    <h3>Products</h3>
-                    <p>-</p>
-                    <button>Start Shopping</button>
-                </div>
+                <h3>Currently, there are no active campaigns.</h3>
+                <!--
+        <div class="campaign-card">
+          <h3>No campaigns at the moment—stay tuned!</h3>
+          <p>We will announce our campaigns soon.</p>
+          <button>Browse Products</button>
+        </div>
+        -->
             </div>
         </section>
     </section>
 
-    <!-- Cocktails -->
-    <section class="cocktail-section box-wrapper" id="cocktail-section">
 
+    <!-- ✅ COCKTAILS -->
+    <section class="cocktail-section box-wrapper" id="cocktail-section">
         <div class="cocktail-header">
             <h2 class="cocktail-title">Popular Cocktails</h2>
         </div>
 
         <div class="cocktail-3d-carousel">
             <button class="cocktail-btn left" onclick="rotateCarousel(-1)">&#10094;</button>
-
             <div class="carousel-container">
                 <div class="cocktail-carousel" id="cocktailCarousel">
-                    <!-- coctails.json -->
+                    <!-- cocktails.json -->
                 </div>
             </div>
-
             <button class="cocktail-btn right" onclick="rotateCarousel(1)">&#10095;</button>
         </div>
 
         <div class="cocktail-pagination"></div>
         <!-- script.js -->
 
-
         <a href="cocktails.html" class="see-all-button">View All</a>
     </section>
 
-    <!-- about-us -->
+
+    <!-- ✅ ABOUTS US -->
     <section class="side-section-wrapper">
         <section class="about-us" id="about-us">
             <h2>About Us</h2>
             <div class="about-gallery">
-                <img src="../images/laratekel_1.png" alt="Mekan 1" onclick="openPopup(this.src)" />
-                <img src="../images/laratekel_1.png" alt="Mekan 2" onclick="openPopup(this.src)" />
-                <img src="../images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
-                <img src="../images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
-                <img src="../images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
-                <img src="../images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
-                <img src="../images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
-                <img src="../images/laratekel_1.png" alt="Mekan 3" onclick="openPopup(this.src)" />
+                <img src="../images/aboutus/laratekel0.jpg" alt="Venue 0" loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="../images/aboutus/laratekel1.jpg" alt="Venue 1" loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="../images/aboutus/laratekel2.jpg" alt="Venue 2" loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="../images/aboutus/laratekel3.jpg" alt="Venue 3" loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="../images/aboutus/laratekel4.jpg" alt="Venue 4" loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="../images/aboutus/laratekel5.jpg" alt="Venue 5" loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="../images/aboutus/laratekel6.jpg" alt="Venue 6" loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="../images/aboutus/laratekel7.jpg" alt="Venue 7" loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="../images/aboutus/laratekel8.jpg" alt="Venue 8" loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="../images/aboutus/laratekel9.jpg" alt="Venue 9" loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="../images/aboutus/laratekel10.jpg" alt="Venue 10" loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="../images/aboutus/laratekel11.jpg" alt="Venue 11" loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="../images/aboutus/laratekel12.jpg" alt="Venue 12" loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="../images/aboutus/laratekel13.jpg" alt="Venue 13" loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="../images/aboutus/laratekel14.jpg" alt="Venue 14" loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
+                <img src="../images/aboutus/laratekel15.jpg" alt="Venue 15" loading="lazy" decoding="async"
+                    onclick="openPopup(this.src)" />
             </div>
 
             <div class="about-card">
                 <p>
-                    Lara Tekel & Shop, founded by <strong>Ebru Korkmaz</strong> and <strong>Murat Korkmaz</strong> in
-                    Kartepe, Kocaeli, aims to offer quality and diverse alcoholic beverages at affordable prices along
-                    with friendly and reliable service.
-
-                    We welcome you with our special campaigns and carefully selected cocktail suggestions. Thank you to
-                    everyone who chooses us.
-
+                    Lara Tekel & Shop was founded in Kartepe, Kocaeli by <strong>Ebru Korkmaz</strong> and
+                    <strong>Murat Korkmaz</strong>. Our aim is to provide quality and diverse alcoholic beverages at
+                    affordable
+                    prices while offering friendly and reliable service. With special campaigns and carefully selected
+                    cocktail
+                    suggestions, we are here for you. Thank you to everyone who chooses us.
                 </p>
             </div>
         </section>
 
-        <!-- Working Hours -->
+
+        <!-- ✅ HOURS -->
         <section class="work-hours-section" id="working-hours">
             <h2>Working Hours</h2>
             <div class="work-hours">
                 <div class="work-card">
-                    <h3>Monday</h3>
-                    <p>09:00 - 00:00</p>
-                    <h3>Tuesday</h3>
-                    <p>09:00 - 00:00</p>
-                    <h3>Wednesday</h3>
-                    <p>09:00 - 00:00</p>
-                    <h3>Thursday</h3>
-                    <p>09:00 - 00:00</p>
-                    <h3>Friday</h3>
-                    <p>09:00 - 00:00</p>
-                    <h3>Saturday</h3>
-                    <p>09:00 - 00:00</p>
-                    <h3>Sunday</h3>
-                    <p>09:00 - 00:00</p>
 
+                    <!-- === Yeni tasarım (boş kısmın yerine) === -->
+                    <div class="lt-hours-card" id="ltHours">
+                        <div class="lt-hours-head">
+                            <div class="lt-hours-state">
+                                <span class="lt-dot" id="ltDot" aria-hidden="true"></span>
+                                <span id="ltStateText">Checking…</span>
+                            </div>
+                            <div class="lt-hours-today">
+                                Today: <strong id="ltTodayRange">—</strong>
+                            </div>
+                        </div>
+
+                        <ul class="lt-hours-list" id="ltHoursList"><!-- JS --></ul>
+
+                        <div class="lt-hours-note">
+                            <i class="fa-regular fa-circle-question" aria-hidden="true"></i>
+                            Hours may vary on holidays.
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </section>
 
-    <!-- Google Reviews -->
+
+    <!-- ✅ REVIEWS -->
     <section id="google-reviews">
         <div class="reviews">
-            <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+            <!-- Elfsight Google Reviews -->
             <script src="https://static.elfsight.com/platform/platform.js" async></script>
             <div class="elfsight-app-215bd6e9-2cf7-416e-8b07-0a8892c86679" data-elfsight-app-lazy></div>
         </div>
     </section>
 
-    <!-- ✅ Footer -->
+
+    <!-- ✅ FOOTER -->
     <div class="site-footer">
         <div class="footer-container">
 
-            <!-- ABOUT -->
+            <!-- ABOUT US -->
             <div class="footer-column">
                 <h2>About Us</h2>
-                <p>LARA TEKEL & SHOP, we offer the highest quality drinks in Kartepe at the most affordable prices.
-                    We are here with special options to suit every taste.</p>
+                <p>As LARA TEKEL & SHOP, we provide the best quality drinks in Kartepe at the best prices. With unique
+                    options
+                    for every taste, we are here for you.</p>
                 <div class="footer-socials">
-                    <a href="https://www.instagram.com/laratekel/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/laratekel/" target="_blank" rel="noopener noreferrer"><i
+                            class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
 
-
-
-            <!-- Contact -->
+            <!-- CONTACT -->
             <div class="footer-column">
-                <h2>Order Now</h2>
+                <h2>Order</h2>
                 <p><i class="fa-solid fa-phone"></i> Order Line:</p>
                 <p><a href="tel:+905326121441" class="phone-link">+90 532 612 14 41</a></p>
                 <p><a href="tel:+905335576225" class="phone-link">+90 533 557 62 25</a></p>
-
-
                 <p><i class="fa-regular fa-clock"></i> Working Hours: 9:00 - 00:00</p>
-                <a href="https://wa.me/905335576225" target="_blank" class="order-button">Order Now</a>
+                <a href="https://wa.me/905335576225" target="_blank" class="order-button"
+                    rel="noopener noreferrer">Order Now</a>
             </div>
 
-            <!-- Map -->
+            <!-- MAP -->
             <div class="footer-column footer-map">
                 <h2>Location</h2>
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.0659285397833!2d30.030868699999996!3d40.738574799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb519eefa327bd%3A0x98393dc30a450245!2sLara%20Tekel%20%26%20shop!5e0!3m2!1str!2str!4v1752669643582!5m2!1str!2str"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.0659285397833!2d30.030868699999996!3d40.738574799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb519eefa327bd%3A0x98393dc30a450245!2sLara%20Tekel%20%26%20shop!5e0!3m2!1sen!2sen!4v1752669643582!5m2!1sen!2sen"
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
-
+            <!-- TERMS -->
+            <div class="footer-legal">
+                <button id="termsBtn" class="terms-btn">Terms & Conditions</button>
+            </div>
         </div>
 
+
+    <!-- ✅ BOTTOM FOOTER -->
         <div class="footer-bottom">
             © 2025 LARA TEKEL & SHOP | All rights reserved. <br>
-            Designed and coded by <a href="https://github.com/larakorkmaz" target="_blank">Lara Korkmaz</a>.
+            Designed and coded by
+            <a href="https://github.com/larakorkmaz" target="_blank" rel="noopener noreferrer">Lara Korkmaz</a>.
         </div>
-
     </div>
 
-    </footer>
 
-    <!-- WhatsApp Button -->
+    <!-- ✅ WP BUTTON -->
     <a href="https://wa.me/905335576225" target="_blank" class="whatsapp-button" aria-label="WhatsApp">
-        <img src="../images/whatsapp-icon.png" alt="WhatsApp" />
+        <img src="../images/whatsapp-icon.png" alt="Order via WhatsApp" />
     </a>
 
+
+    <!-- ✅ IMAGE POPUP -->
     <div class="image-popup" id="popup">
         <span class="close-popup" onclick="closePopup()">×</span>
-        <img id="popup-img" src="" alt="Büyük görsel">
+        <img id="popup-img" src="" alt="Large image">
     </div>
 
-</body>
+    <!-- ✅ DRAWER -->
+    <div class="drawer-backdrop" hidden></div>
+    <nav id="mobile-drawer" class="drawer" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="drawer__header"><span class="drawer__title">Menu</span></div>
+        <ul class="drawer__list">
+            <li style="--i:1"><a href="#hero"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li style="--i:2"><a href="products.html"><i class="fa-solid fa-beer-mug-empty"></i> Products</a></li>
+            <li style="--i:3"><a href="#campaigns-section"><i class="fas fa-tags"></i> Campaigns</a></li>
+            <li style="--i:4"><a href="cocktails.html#all-cocktail"><i class="fa-solid fa-martini-glass"></i> Cocktail
+                    Suggestions</a></li>
+            <li style="--i:5"><a href="#about-us"><i class="fas fa-store"></i> About Us</a></li>
+            <li style="--i:6"><a href="#working-hours"><i class="fa-solid fa-clock"></i> Working Hours</a></li>
+            <li style="--i:8">
+                <a href="#" id="termsLink">
+                    <i class="fa-regular fa-file-lines"></i> Terms & Conditions
+                </a>
+            </li>
+            <li style="--i:7"><a href="../index.html"><i class="fas fa-globe"></i> Turkish</a></li>
+        </ul>
+    </nav>
 
-<script src="../script.js"></script>
+    <!-- ✅ TERMS MODAL -->
+    <div id="termsModal" class="terms-modal" aria-hidden="true">
+        <div class="terms-content">
+            <span class="terms-close" id="termsClose">&times;</span>
+            <h2>Terms & Conditions</h2>
+
+            <ul class="terms-list">
+                <li><strong>⚠️ No sales of alcoholic beverages or tobacco products to persons under 18 years of
+                        age.</strong></li>
+                <li>The product information on this website is provided for promotional purposes only.</li>
+                <li>For orders placed through the hotline, it is assumed that the buyer is over 18 years old.</li>
+                <li>Prices and promotions may vary depending on stock availability.</li>
+                <li>Working hours may differ on official holidays.</li>
+                <li>By visiting our website, you are deemed to have accepted these terms.</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- ✅ SCRIPTS -->
+    <script src="../script.js"></script>
+    <script src="../en/work_hours.js"></script>
+</body>
 
 </html>
