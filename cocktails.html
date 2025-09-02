@@ -8,14 +8,14 @@
     <meta name="description"
         content="Kartepe'deki Lara Tekel & Shop'ta alkollü içecekler, kampanyalar, kokteyl önerileri ve daha fazlası. Web sitemizi ziyaret edin!">
 
-    <!-- CSS Dosyaları -->
+    <!-- ✅ STYLE -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="cocktails.css" />
 
-    <!-- Google Font -->
+    <!-- ✅ FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
+    <!-- ✅ ICONS -->
     <script src="https://kit.fontawesome.com/c80fbdec94.js" crossorigin="anonymous"></script>
 </head>
 
@@ -31,33 +31,18 @@
             <ul class="navlinks">
                 <li class="nav-item">
                     <a href="index.html#hero" class="nav-expand active">
-                        <i class="fa-solid fa-house"></i>
-                        <span class="nav-label">ANASAYFA</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="cocktails.html#all-cocktail" class="nav-expand active">
-                        <i class="fa-solid fa-martini-glass"></i>
-                        <span class="nav-label">KOKTEYLLER</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#hero" class="nav-expand active">
                         <i class="fa-solid fa-arrow-left"></i>
                         <span class="nav-label">GERİ DÖN</span>
                     </a>
                 </li>
-
                 <li class="nav-item lang-btn">
                     <a href="en/cocktails.html"><i class="fas fa-globe"></i> EN</a>
                 </li>
-
-
             </ul>
         </nav>
     </header>
 
-    <!-- ✅ KOKTEYL LİSTESİ -->
+    <!-- ✅ COCKTAIL LIST -->
     <section class="all-cocktail" id="all-cocktail">
         <h2>Tüm Kokteyl Tarifleri</h2>
 
@@ -80,16 +65,14 @@
             <button onclick="clearBaseFilter()">Temizle</button>
         </div>
 
-
         <div class="cocktail-grid" id="cocktailGrid"></div>
 
         <div class="pagination" id="pagination"></div>
 
-
-
     </section>
 
-    <!-- Modal (Açılır pencere) -->
+
+    <!-- ✅ MODAL -->
     <div class="modal-overlay" id="cocktailModal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">×</span>
@@ -99,15 +82,8 @@
         </div>
     </div>
 
-
-
-    <!-- (İsteğe bağlı) ✅ FOOTER -->
-    <!-- Footer'ı da eklemek istersen buraya index.html'dekini aynen yapıştırabilirsin -->
-
     <script src="script.js"></script>
     <script src="cocktails.js"></script>
-
-
 </body>
 
 </html>
