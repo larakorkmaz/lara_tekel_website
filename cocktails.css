@@ -1,110 +1,157 @@
-/* Genel sayfa yapısı */
+/* =========================================================
+ THEME VALUES
+========================================================= */
+:root {
+    --bg: #111;
+    --bg-2: #1c1c1c;
+    --panel: #222;
+    --text: #fff;
+    --muted: #aaa;
+    --shadow: rgba(199, 139, 29, 0.63);
+    --accent: #f8b232;
+    --accent-2: #d9961f;
+    --danger: #e63946;
+
+    --radius-xxl: 25px;
+    --radius-xl: 20px;
+    --radius-lg: 16px;
+
+    --ease: 0.3s ease;
+}
+
+/* =========================================================
+ GLOBAL PAGE / RESET
+========================================================= */
+* {
+    box-sizing: border-box
+}
+
+html,
 body {
-    background-color: #111;
-    color: #fff;
+    height: 100%
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
     font-family: "Roboto", sans-serif;
     margin: 0;
     padding: 0;
 }
 
+/* =========================================================
+ SEARCH AREA
+========================================================= */
 .search-wrapper {
-    margin-bottom: 30px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 #cocktailSearch {
-    padding: 10px 20px;
-    border-radius: 25px;
-    border: none;
-    font-size: 16px;
     width: 280px;
-    background-color: #222;
-    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--radius-xxl);
+    background-color: var(--panel);
+    color: var(--text);
     outline: none;
-    box-shadow: 0 0 10px rgba(199, 139, 29, 0.63);
+    font-size: 16px;
+    box-shadow: 0 0 10px var(--shadow);
 }
 
 #cocktailSearch::placeholder {
-    color: #aaa;
+    color: var(--muted)
 }
 
+/* Button used next to search (e.g., clear/search) */
+.search-wrapper button {
+    margin-left: 10px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: var(--radius-xxl);
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--accent);
+    color: #111;
+    transition: all var(--ease);
+}
 
+.search-wrapper button:hover {
+    background-color: var(--accent-2);
+    color: #fff;
+}
+
+/* =========================================================
+ TOP FILTER BUTTONS
+========================================================= */
 .filter-buttons {
-    margin-bottom: 30px;
     display: flex;
     justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
 .filter-buttons button {
-    background-color: #f8b232;
-    color: #111;
-    border: none;
     padding: 10px 20px;
-    border-radius: 25px;
+    border: none;
+    border-radius: var(--radius-xxl);
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
+    background-color: var(--accent);
+    color: #111;
+    transition: all var(--ease);
 }
 
 .filter-buttons button:hover {
-    background-color: #d9961f;
+    background-color: var(--accent-2);
     color: #fff;
 }
 
-/* Panel gizliyken */
+/* Favorites toggle active state */
+#favToggleBtn.active {
+    background-color: var(--danger);
+    color: #fff;
+}
+
+/* =========================================================
+ BASE FILTER PANEL (toggle open/close)
+========================================================= */
+/* When closed */
 #baseFilterPanel {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: all 0.6s ease;
     transform: scaleY(0.95);
+    transition: all 0.6s ease;
 }
 
-/* Panel görünürken */
+/* When open */
 #baseFilterPanel.visible {
     max-height: 500px;
-    /* İhtiyaca göre artır */
+    /* increase if needed */
     opacity: 1;
     transform: scaleY(1);
 }
 
-
+/* Content */
 .base-filter {
-    margin-top: -10px;
-    margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 14px;
-    padding: 0 0;
-    background: #1c1c1c;
-    border-radius: 16px;
+    padding: 0;
+    margin: -10px 0 20px;
+    background: var(--bg-2);
+    border-radius: var(--radius-lg);
+    color: var(--text);
     font-size: 14px;
-    color: #fff;
+
+    /* while hidden */
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: all 0.3s ease;
-}
-
-.base-filter label {
-    background: #222;
-    padding: 8px 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    border: 1px solid #f8b232;
-    transition: background 0.2s;
-}
-
-.base-filter label:hover {
-    background: #333;
-}
-
-.base-filter input[type="checkbox"] {
-    margin-right: 8px;
-    accent-color: #f8b232;
+    transition: all var(--ease);
 }
 
 .base-filter.visible {
@@ -113,82 +160,80 @@ body {
     opacity: 1;
 }
 
+.base-filter label {
+    background: #222;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid var(--accent);
+    transition: background var(--ease);
+}
+
+.base-filter label:hover {
+    background: #333
+}
+
+.base-filter input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: var(--accent);
+}
+
 .base-filter button {
     background: transparent;
     border: none;
-    color: #f8b232;
+    color: var(--accent);
     font-weight: bold;
     cursor: pointer;
     margin-left: 10px;
-    transition: color 0.2s;
+    transition: color var(--ease);
 }
 
 .base-filter button:hover {
-    color: #fff;
+    color: #fff
 }
 
-.search-wrapper button {
-    background-color: #f8b232;
-    color: #111;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: 10px;
-    transition: all 0.3s ease;
-}
-
-.search-wrapper button:hover {
-    background-color: #d9961f;
-    color: #fff;
-}
-
-#favToggleBtn.active {
-    background-color: #e63946;
-    color: white;
-}
-
-
-/* Kokteyl bölümü */
+/* =========================================================
+ MAIN SECTION / HEADING
+========================================================= */
 .all-cocktail {
-    padding: 140px 20px 50px;
-    /* navbar'a çarpmasın */
     max-width: 1200px;
     margin: 0 auto;
+    padding: 140px 20px 50px;
+    /* navbar offset */
     text-align: center;
 }
 
 .all-cocktail h2 {
-    font-size: 36px;
     margin-bottom: 40px;
-    color: #f8b232;
+    font-size: 36px;
+    color: var(--accent);
     letter-spacing: 1px;
 }
 
-/* Grid yapı */
+/* =========================================================
+ GRID LAYOUT & CARDS
+========================================================= */
 .cocktail-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 24px;
     padding: 0 10px;
     min-height: 600px;
-    /* 👈 BU yeni: boşluk bırakır */
+    /* prevent tab jump when empty */
     align-items: start;
     justify-items: center;
 }
 
-/* Her kart */
 .cocktail-card {
     position: relative;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+    transition: transform var(--ease), box-shadow var(--ease);
 }
 
 .cocktail-card:hover {
@@ -196,7 +241,7 @@ body {
     box-shadow: 0 0 15px rgba(248, 178, 50, 0.3);
 }
 
-/* Görsel */
+/* Card image */
 .cocktail-card img {
     width: 100%;
     height: auto;
@@ -205,88 +250,19 @@ body {
     margin-bottom: 15px;
 }
 
-/* Başlık */
+/* Card title & description */
 .cocktail-card h3 {
-    color: #f8b232;
     font-size: 18px;
+    color: var(--accent);
     margin-bottom: 8px;
 }
 
-/* Açıklama */
 .cocktail-card p {
     font-size: 14px;
     opacity: 0.8;
 }
 
-/* Geri Dön butonu */
-.see-all-button {
-    display: inline-block;
-    margin-top: 40px;
-    padding: 12px 24px;
-    background: #f8b232;
-    color: #111;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.see-all-button:hover {
-    background: #d9961f;
-    color: #fff;
-}
-
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    z-index: 999;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background: #222;
-    padding: 30px;
-    border-radius: 20px;
-    max-width: 500px;
-    width: 90%;
-    color: #fff;
-    text-align: center;
-    position: relative;
-}
-
-.modal-content img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    margin-bottom: 20px;
-}
-
-.modal-content h3 {
-    color: #f8b232;
-    margin-bottom: 10px;
-}
-
-.modal-content p {
-    font-size: 15px;
-    opacity: 0.85;
-}
-
-.close-modal {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-}
-
+/* Favorite icon */
 .fav-icon {
     position: absolute;
     top: 10px;
@@ -298,30 +274,101 @@ body {
 .fav-icon i {
     font-size: 18px;
     color: #aaa;
-    /* normal görünüm */
 }
 
 .fav-icon.favorited i {
-    color: #e63946;
+    color: var(--danger);
     animation: popFav 0.3s ease;
-    /* kırmızı kalp */
 }
-
 
 @keyframes popFav {
     0% {
-        transform: scale(1);
+        transform: scale(1)
     }
 
     50% {
-        transform: scale(1.4);
+        transform: scale(1.4)
     }
 
     100% {
-        transform: scale(1);
+        transform: scale(1)
     }
 }
 
+/* =========================================================
+ MODAL (Detail window)
+========================================================= */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 999;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    background: var(--panel);
+    color: var(--text);
+    text-align: center;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.modal-content h3 {
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 15px;
+    opacity: .85;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* =========================================================
+ "SEE ALL" / BACK BUTTON
+========================================================= */
+.see-all-button {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 12px 24px;
+    border-radius: var(--radius-xxl);
+    text-decoration: none;
+    font-weight: bold;
+    background: var(--accent);
+    color: #111;
+    transition: background var(--ease), color var(--ease);
+}
+
+.see-all-button:hover {
+    background: var(--accent-2);
+    color: #fff;
+}
+
+/* =========================================================
+ PAGINATION
+========================================================= */
 .pagination {
     margin-top: 30px;
     text-align: center;
@@ -332,26 +379,27 @@ body {
     padding: 8px 16px;
     border: none;
     border-radius: 20px;
-    background-color: #f8b232;
-    color: #111;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
+    background-color: var(--accent);
+    color: #111;
+    transition: all var(--ease);
 }
 
 .pagination button:hover {
-    background-color: #d9961f;
+    background-color: var(--accent-2);
     color: #fff;
 }
 
 .pagination button.active {
-    background-color: #e63946;
+    background-color: var(--danger);
     color: #fff;
 }
 
-
-@media (max-width: 768px) {
-
+/* =========================================================
+ RESPONSIVE
+========================================================= */
+@media (max-width:768px) {
     .cocktail-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
@@ -359,7 +407,7 @@ body {
     }
 
     .cocktail-card {
-        padding: 12px;
+        padding: 12px
     }
 
     .filter-buttons {
@@ -370,31 +418,30 @@ body {
 
     .filter-buttons button,
     #cocktailSearch {
-        width: 100%;
+        width: 100%
     }
 
     #baseFilterPanel {
         padding: 10px;
-        font-size: 14px;
+        font-size: 14px
     }
 
     .base-filter label {
         display: block;
-        margin-bottom: 8px;
+        margin-bottom: 8px
     }
-
 
     .modal-content {
         width: 90%;
-        padding: 20px;
+        padding: 20px
     }
 
     .modal-content h3 {
-        font-size: 20px;
+        font-size: 20px
     }
 
     .modal-content p {
-        font-size: 14px;
+        font-size: 14px
     }
 
     .see-all-button {
