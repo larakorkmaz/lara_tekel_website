@@ -5,7 +5,7 @@
         "desc": "Nane, lime ve rom ile yapılan ferahlatıcı bir kokteyl.",
         "img": "images/cocktails/mojito.png",
         "type": "alkollu",
-        "featured": true,
+        "featured": false,
         "base": "rum",
         "details": "Mojito, taze nane yaprakları, lime suyu, şeker, soda ve beyaz rom ile hazırlanan klasik bir Küba kokteylidir. Genellikle yaz aylarında tercih edilir ve ferahlatıcı özelliği ile bilinir."
     },
@@ -35,7 +35,7 @@
         "desc": "Ananas suyu, hindistan cevizi sütü ve rom ile yapılan tropik içecek.",
         "img": "images/cocktails/pinacolada.png",
         "type": "alkollu",
-        "featured": false,
+        "featured": true,
         "base": "rum",
         "details": "Pina Colada, ananas suyu, hindistan cevizi kreması ve beyaz rom ile hazırlanan tatlı ve tropik bir içkidir. Genellikle buzla karıştırılarak servis edilir."
     },
