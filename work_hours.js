@@ -2,13 +2,13 @@
   // ---- Ayarlar: Çalışma saatleri (Pazartesi=1 ... Pazar=7)
   // Gece yarısı için ["09:00","00:00"] kullan. Kapalı gün için null kullan.
   const HOURS = {
-    1: ["09:00", "00:00"], // Pazartesi
-    2: ["09:00", "00:00"], // Salı
-    3: ["09:00", "00:00"], // Çarşamba
-    4: ["09:00", "00:00"], // Perşembe
-    5: ["09:00", "00:00"], // Cuma
-    6: ["09:00", "00:00"], // Cumartesi
-    7: ["09:00", "00:00"], // Pazar
+    1: ["09:00", "22:00"], // Pazartesi
+    2: ["09:00", "22:00"], // Salı
+    3: ["09:00", "22:00"], // Çarşamba
+    4: ["09:00", "22:00"], // Perşembe
+    5: ["09:00", "22:00"], // Cuma
+    6: ["09:00", "22:00"], // Cumartesi
+    7: ["09:00", "22:00"], // Pazar
   };
 
   // ---- Elemanlar
