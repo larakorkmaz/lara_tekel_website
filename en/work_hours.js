@@ -2,13 +2,13 @@
     // ---- Config: working hours (Mon=1 ... Sun=7)
     // Use ["09:00","00:00"] for midnight. Use null for closed day.
     const HOURS = {
-        1: ["09:00", "00:00"], // Monday
-        2: ["09:00", "00:00"], // Tuesday
-        3: ["09:00", "00:00"], // Wednesday
-        4: ["09:00", "00:00"], // Thursday
-        5: ["09:00", "00:00"], // Friday
-        6: ["09:00", "00:00"], // Saturday
-        7: ["09:00", "00:00"], // Sunday
+        1: ["09:00", "22:00"], // Monday
+        2: ["09:00", "22:00"], // Tuesday
+        3: ["09:00", "22:00"], // Wednesday
+        4: ["09:00", "22:00"], // Thursday
+        5: ["09:00", "22:00"], // Friday
+        6: ["09:00", "22:00"], // Saturday
+        7: ["09:00", "22:00"], // Sunday
     };
 
     // ---- Elements
