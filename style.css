@@ -8,7 +8,7 @@
 /* Her şeyi gizle 
 body>*:not(.coming-soon-overlay) {
     display: none;
-} */
+}*/
 
 
 html,
@@ -2913,4 +2913,91 @@ body.no-scroll {
     margin-bottom: 10px;
 }
 
+/* === 18+ AGE GATE === */
+.agegate {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .88);
+    display: none;
+    /* JS ile açılacak */
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    padding: 24px;
+}
 
+.agegate.is-open {
+    display: flex;
+}
+
+.agegate__card {
+    background: #111;
+    /* dark tema */
+    color: #fff;
+    width: min(520px, 100%);
+    border-radius: 16px;
+    padding: 24px 22px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .5);
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.agegate__card h2 {
+    margin: 0 0 10px;
+    font-size: 26px;
+    letter-spacing: .3px;
+}
+
+.agegate__card p {
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.agegate__actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.agegate__btn {
+    flex: 1;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, .15);
+    background: #1a1a1a;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .08s ease, opacity .2s ease, border-color .2s ease;
+}
+
+.agegate__btn:hover {
+    transform: translateY(-1px);
+}
+
+.agegate__btn--primary {
+    background: var(--gold, #ffac30);
+    /* varsa --gold değişkenini kullan */
+    color: #000;
+    border-color: transparent;
+}
+
+.agegate__btn--ghost {
+    background: transparent;
+}
+
+.agegate__note {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #cfcfcf;
+}
+
+.agegate__note a {
+    color: var(--gold, #ffd277);
+    text-decoration: underline;
+}
+
+/* Sayfa arkası scroll'u kilitlemek için */
+html.agegate-lock,
+body.agegate-lock {
+    overflow: hidden !important;
+}
