@@ -563,3 +563,64 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// +18
+  (function () {
+  const modal = document.getElementById('ageGate');
+  if (!modal) return;
+
+  const confirmBtn = document.getElementById('ageConfirm');
+  const exitBtn    = document.getElementById('ageExit');
+  const termsLink  = document.getElementById('openTermsFromAge');
+
+  const lockScroll = (on) => {
+    document.documentElement.classList.toggle('agegate-lock', on);
+  document.body.classList.toggle('agegate-lock', on);
+  };
+
+  const openGate = () => {
+    modal.classList.add('is-open');
+  modal.setAttribute('aria-hidden', 'false');
+  lockScroll(true);
+    setTimeout(() => confirmBtn?.focus(), 0);
+  };
+
+  const closeGate = () => {
+    modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden', 'true');
+  lockScroll(false);
+  };
+
+
+  openGate();
+
+  confirmBtn?.addEventListener('click', () => {
+    closeGate();
+  });
+
+
+  exitBtn?.addEventListener('click', () => {
+    window.location.href = 'https://www.google.com';
+  });
+
+
+  termsLink?.addEventListener('click', (e) => {
+    e.preventDefault();
+  document.getElementById('termsBtn')?.click();
+  });
+
+
+  modal.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab') return;
+  const focusables = modal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
+  if (!focusables.length) return;
+  const first = focusables[0];
+  const last  = focusables[focusables.length - 1];
+  if (e.shiftKey && document.activeElement === first) {
+    e.preventDefault(); last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+    e.preventDefault(); first.focus();
+    }
+  });
+})();
+
