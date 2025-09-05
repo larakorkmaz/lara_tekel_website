@@ -1,4 +1,8 @@
-// === GLOBAL DEĞİŞKENLER ===
+"use strict";
+
+/* ======================================================================
+   GLOBAL STATE
+====================================================================== */
 let currentIndex = 0;
 let isAnimating = false;
 const animationDuration = 800;
@@ -6,14 +10,16 @@ const animationDuration = 800;
 let carousel = null;
 let cocktails = [];
 
-// === HAMBURGER / DRAWER ===
+/* ======================================================================
+   HAMBURGER / DRAWER
+====================================================================== */
 (function () {
   const btn = document.querySelector('.hamburger');
   const drawer = document.getElementById('mobile-drawer');
   const closeBtn = drawer ? drawer.querySelector('.drawer__close') : null;
   const backdrop = document.querySelector('.drawer-backdrop');
 
-  if (!btn || !drawer || !backdrop) return; // güvenlik
+  if (!btn || !drawer || !backdrop) return;
 
   function openDrawer() {
     btn.classList.add('is-active');
@@ -41,12 +47,12 @@ let cocktails = [];
   closeBtn && closeBtn.addEventListener('click', closeDrawer);
   backdrop.addEventListener('click', closeDrawer);
 
-  // ESC ile kapat (carousel’in ArrowLeft/Right dinleyicisine dokunmuyoruz)
+  // Close with ESC (does not interfere with carousel arrow listeners)
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
   });
 
-  // Drawer içindeki linke tıklayınca kapat
+  // Close drawer when clicking a link inside it
   drawer.addEventListener('click', (e) => {
     const a = e.target.closest('a');
     if (a) closeDrawer();
@@ -54,6 +60,7 @@ let cocktails = [];
 })();
 
 window.addEventListener('resize', () => {
+  // Ensure drawer is closed on desktop widths
   const drawer = document.getElementById('mobile-drawer');
   const backdrop = document.querySelector('.drawer-backdrop');
   const btn = document.querySelector('.hamburger');
@@ -66,9 +73,34 @@ window.addEventListener('resize', () => {
   }
 });
 
-/* =======================================================================
-   ÜRÜNLER — JSON'dan yükleme
-   ======================================================================= */
+/* ======================================================================
+   LANGUAGE HELPERS (used by products; tolerant to old/new schemas)
+====================================================================== */
+
+// Normalize paths to root (so they work under / and /en/ etc.)
+const toRoot = (p) => {
+  if (!p) return "";
+  if (/^https?:\/\//i.test(p)) return p;   // already absolute (http/https)
+  return p.startsWith("/") ? p : `/${p}`;  // make root-relative
+};
+
+const getLang = () =>
+  document.documentElement.lang ||
+  document.body?.dataset?.lang ||
+  localStorage.getItem("lang") ||
+  "tr";
+
+const pickDesc = (desc, lang) => {
+  if (!desc) return "";
+  if (typeof desc === "object") {
+    return desc[lang] || desc.tr || desc.en || "";
+  }
+  return String(desc);
+};
+
+/* ======================================================================
+   PRODUCTS — load from products.json (multi-language aware)
+====================================================================== */
 function loadProducts() {
   const detailImg = document.getElementById('detail-img');
   const detailTitle = document.getElementById('detail-title');
@@ -78,37 +110,45 @@ function loadProducts() {
 
   if (!bar) return;
 
-  fetch('products.json')
+  fetch('../products.json')
     .then(res => res.json())
     .then(list => {
-      if (!Array.isArray(list)) throw new Error('products.json formatı geçersiz');
+      if (!Array.isArray(list)) throw new Error('products.json is not a valid array');
 
-      // ürünleri çiz
-      bar.innerHTML = list.map(item => `
-        <div class="product"
-             data-title="${item.title}"
-             data-desc="${item.desc}">
-          <img src="${item.img}" alt="${item.title}">
-        </div>
-      `).join('');
+      const lang = getLang();
+
+      // Render the horizontal product bar
+      bar.innerHTML = list.map(item => {
+        const titleText = item.title || "";
+        const img = item.img || "";
+        const descText = pickDesc(item.desc, lang);
+        return `
+          <div class="product"
+               data-title="${titleText}"
+               data-desc="${descText}">
+            <img src="${img}" alt="${titleText}">
+          </div>
+        `;
+      }).join('');
 
       const productEls = bar.querySelectorAll('.product');
 
+      // Show details pane
       function showProduct(el, animate = false) {
         productEls.forEach(p => p.classList.remove('active'));
         el.classList.add('active');
 
         const imgEl = el.querySelector('img');
-        if (imgEl) {
+        if (imgEl && detailImg) {
           detailImg.src = imgEl.src;
           detailImg.alt = imgEl.alt;
         }
-        detailTitle.textContent = el.dataset.title || '';
-        detailDesc.textContent = el.dataset.desc || '';
-        detailBox.classList.add('visible');
+        if (detailTitle) detailTitle.textContent = el.dataset.title || '';
+        if (detailDesc) detailDesc.textContent = el.dataset.desc || '';
+        detailBox && detailBox.classList.add('visible');
 
-        // animasyon sadece tıklamada
-        if (animate && imgEl) {
+        // Small-to-large transition animation on click
+        if (animate && imgEl && detailImg) {
           const smallRect = imgEl.getBoundingClientRect();
           const bigRect = detailImg.getBoundingClientRect();
           const dx = smallRect.left - bigRect.left;
@@ -127,45 +167,60 @@ function loadProducts() {
         }
       }
 
-      // tıklamalar
+      // Click handlers
       productEls.forEach(p => p.addEventListener('click', () => showProduct(p, true)));
 
-      // açılışta ilk ürün
+      // Select the first product on initial load
       if (productEls.length) showProduct(productEls[0], false);
+
+      // Re-render descriptions when language changes (optional)
+      const rerender = (newLang) => {
+        productEls.forEach((p, i) => {
+          const item = list[i];
+          p.dataset.desc = pickDesc(item.desc, newLang);
+        });
+        const active = bar.querySelector('.product.active') || productEls[0];
+        active && active.click();
+      };
+
+      window.addEventListener('lang:change', (e) => {
+        const newLang = e?.detail?.lang || getLang();
+        rerender(newLang);
+      });
     })
-    .catch(err => console.error('Ürünler yüklenemedi:', err));
+    .catch(err => console.error('Products could not be loaded:', err));
 }
 
-/* =======================================================================
-   ANA — sayfa hazır olunca
-   ======================================================================= */
-document.addEventListener("DOMContentLoaded", () => {
-  // Ürünleri JSON'dan yükle
-  loadProducts();
-
-  // Öne çıkan kokteyller (varsa)
+/* ======================================================================
+   FEATURED COCKTAILS — simple grid cards (if container exists)
+====================================================================== */
+function initFeaturedCocktails() {
   const container = document.getElementById("featured-cocktails");
-  if (container) {
-    fetch("cocktails.json")
-      .then(res => res.json())
-      .then(data => {
-        const featured = data.filter(c => c.featured);
-        featured.forEach(cocktail => {
-          const card = document.createElement("div");
-          card.className = "cocktail-card";
-          card.innerHTML = `
-            <img src="${cocktail.img}" alt="${cocktail.name}">
-            <h3>${cocktail.name}</h3>
-            <p>${cocktail.desc}</p>`;
-          container.appendChild(card);
-        });
-      })
-      .catch(err => {
-        console.error("Kokteyller yüklenemedi:", err);
-      });
-  }
+  if (!container) return;
 
-  // Ürün kaydırma okları
+  fetch("cocktails.json")
+    .then(res => res.json())
+    .then(data => {
+      const featured = Array.isArray(data) ? data.filter(c => c.featured) : [];
+      featured.forEach(cocktail => {
+        const card = document.createElement("div");
+        card.className = "cocktail-card";
+        card.innerHTML = `
+          <img src="${cocktail.img}" alt="${cocktail.name}">
+          <h3>${cocktail.name}</h3>
+          <p>${cocktail.desc}</p>`;
+        container.appendChild(card);
+      });
+    })
+    .catch(err => {
+      console.error("Cocktails could not be loaded:", err);
+    });
+}
+
+/* ======================================================================
+   PRODUCT BAR ARROWS — horizontal scroll
+====================================================================== */
+function initProductBarArrows() {
   const productBar = document.getElementById("productBarList");
   const productLeftBtn = document.querySelector(".scroll-btn.left");
   const productRightBtn = document.querySelector(".scroll-btn.right");
@@ -179,11 +234,15 @@ document.addEventListener("DOMContentLoaded", () => {
       productBar.scrollBy({ left: scrollAmount, behavior: "smooth" });
     });
   }
+}
 
-  // === 3D Carousel ===
+/* ======================================================================
+   3D CAROUSEL — featured cocktails slider
+====================================================================== */
+function initCarousel() {
   carousel = document.getElementById('cocktailCarousel');
   if (!carousel) {
-    console.warn("carousel DOM'da yok, slider yüklenmedi.");
+    console.warn("carousel not found in DOM; slider skipped.");
     return;
   }
 
@@ -193,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch('cocktails.json')
     .then(res => res.json())
     .then(data => {
-      cocktails = data.filter(c => c.featured);
+      cocktails = (Array.isArray(data) ? data : []).filter(c => c.featured);
       createSlides();
       createPagination();
       updateCarousel();
@@ -205,39 +264,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
     .catch(err => {
-      console.warn("Cocktails JSON dosyası yüklenemedi:", err);
+      console.warn("cocktails.json could not be loaded:", err);
       cocktails = [{
         img: "images/cocktails/mocktail.png",
-        name: "Demo İçecek",
-        desc: "Menü şu an gösterilemiyor"
+        name: "Demo Drink",
+        desc: "Menu cannot be displayed right now"
       }];
       createSlides();
       createPagination();
       updateCarousel();
     });
 
-  // Klavye yön tuşları
+  // Keyboard arrows
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') rotateCarousel(-1);
     if (e.key === 'ArrowRight') rotateCarousel(1);
   });
+}
 
-  // Yükleme ekranı
-  window.addEventListener("load", () => {
-    const wrapper = document.querySelector(".wrapper");
-    if (wrapper) {
-      wrapper.style.transition = "opacity 0.5s ease";
-      wrapper.style.opacity = "0";
-      setTimeout(() => {
-        wrapper.style.display = "none";
-      }, 500);
-    }
-  });
-});
-
-/* =======================================================================
-   CAROUSEL fonksiyonları (seninle aynı)
-   ======================================================================= */
+// Build slides
 function createSlides() {
   carousel.innerHTML = '';
   cocktails.forEach((cocktail, index) => {
@@ -254,8 +299,10 @@ function createSlides() {
   });
 }
 
+// Build pagination dots
 function createPagination() {
   const pagination = document.querySelector('.cocktail-pagination');
+  if (!pagination) return;
   pagination.innerHTML = '';
   cocktails.forEach((_, index) => {
     const dot = document.createElement('span');
@@ -266,6 +313,7 @@ function createPagination() {
   });
 }
 
+// Update positions and active dot
 function updateCarousel() {
   const slides = document.querySelectorAll('.cocktail-slide');
   const dots = document.querySelectorAll('.dot');
@@ -337,6 +385,7 @@ function rotateToIndex(index) {
   }, animationDuration);
 }
 
+// Touch support
 function setupTouchEvents() {
   let startX, moveX;
   const threshold = window.innerWidth < 768 ? 30 : 50;
@@ -365,18 +414,26 @@ function setupTouchEvents() {
   }, { passive: true });
 }
 
+/* ======================================================================
+   POPUP HELPERS
+====================================================================== */
 function openPopup(src) {
   const popup = document.getElementById("popup");
   const popupImg = document.getElementById("popup-img");
+  if (!popup || !popupImg) return;
   popupImg.src = src;
   popup.style.display = "flex";
 }
 
 function closePopup() {
-  document.getElementById("popup").style.display = "none";
+  const popup = document.getElementById("popup");
+  if (!popup) return;
+  popup.style.display = "none";
 }
 
-
+/* ======================================================================
+   NAVBAR HOVER HIGHLIGHT
+====================================================================== */
 (function () {
   const list = document.querySelector('.navlinks');
   if (!list) return;
@@ -392,38 +449,47 @@ function closePopup() {
 
   function moveHL(a) {
     if (!a) return;
-    // ✨ offset'ler doğrudan .navlinks’e göre olduğu için şaşmaz
-    const x = a.offsetLeft + 10;       // sol/sağ padding telafisi
+    // Offsets are relative to .navlinks, so this is robust
+    const x = a.offsetLeft + 10; // compensate side paddings
     const w = a.offsetWidth - 20;
     list.style.setProperty('--hl-x', x + 'px');
     list.style.setProperty('--hl-w', w + 'px');
   }
 })();
 
-const termsBtn = document.getElementById("termsBtn");
-const termsModal = document.getElementById("termsModal");
-const termsClose = document.getElementById("termsClose");
+/* ======================================================================
+   TERMS & CONDITIONS MODAL — SIMPLE BIND (footer button)
+   (kept as-is; guarded to avoid double-binding)
+====================================================================== */
+(function () {
+  const termsBtn = document.getElementById("termsBtn");
+  const termsModal = document.getElementById("termsModal");
+  const termsClose = document.getElementById("termsClose");
 
-if (termsBtn && termsModal && termsClose) {
-  termsBtn.addEventListener("click", () => {
-    termsModal.classList.add("show");
-    document.body.classList.add("no-scroll"); // scroll kilitlenir
-  });
-
-  termsClose.addEventListener("click", () => {
-    termsModal.classList.remove("show");
-    document.body.classList.remove("no-scroll");
-  });
-
-  termsModal.addEventListener("click", (e) => {
-    if (e.target === termsModal) {
+  if (termsBtn && termsModal && termsClose && !termsModal.dataset.simpleBound) {
+    const open = () => {
+      termsModal.classList.add("show");
+      document.body.classList.add("no-scroll");
+    };
+    const close = () => {
       termsModal.classList.remove("show");
       document.body.classList.remove("no-scroll");
-    }
-  });
-}
+    };
 
-// === Şartlar & Koşullar Modal – tek ve tutarlı implementasyon ===
+    termsBtn.addEventListener("click", open);
+    termsClose.addEventListener("click", close);
+    termsModal.addEventListener("click", (e) => {
+      if (e.target === termsModal) close();
+    });
+
+    termsModal.dataset.simpleBound = "1";
+  }
+})();
+
+/* ======================================================================
+   TERMS & CONDITIONS MODAL — ENHANCED FLOW (menu & drawer integration)
+   (kept as-is; separate logic; closes drawer if open)
+====================================================================== */
 (function () {
   const modal = document.getElementById('termsModal');
   const footerBtn = document.getElementById('termsBtn');
@@ -437,18 +503,17 @@ if (termsBtn && termsModal && termsClose) {
 
   function openModal(e) {
     if (e) e.preventDefault();
-    // Drawer açıksa kapat (opsiyonel ama iyi olur)
+    // If drawer is open, close it first
     if (drawer && drawer.classList.contains('is-open')) {
       drawer.classList.remove('is-open');
       backdrop?.classList.remove('is-open');
-      backdrop && (backdrop.hidden = true);
+      if (backdrop) backdrop.hidden = true;
       burger?.classList.remove('is-active');
       document.body.classList.remove('no-scroll');
     }
-    // Modalı göster
-    modal.classList.add('show');                // <-- GÖRÜNÜRLÜK
-    modal.setAttribute('aria-hidden', 'false'); // erişilebilirlik
-    document.body.classList.add('no-scroll');   // scroll kilidi
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('no-scroll');
   }
 
   function closeModal() {
@@ -461,14 +526,40 @@ if (termsBtn && termsModal && termsClose) {
   menuLink?.addEventListener('click', openModal);
   closeBtn?.addEventListener('click', closeModal);
 
-  // Modal dışına tıkla -> kapat
+  // Click outside to close
   modal.addEventListener('click', (e) => {
     if (e.target === modal) closeModal();
   });
 
-  // ESC ile kapat
+  // ESC to close
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
   });
 })();
 
+/* ======================================================================
+   PAGE READY
+====================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  // Products
+  loadProducts();
+
+  // Featured cocktails grid (optional container)
+  initFeaturedCocktails();
+
+  // Horizontal product bar arrows
+  initProductBarArrows();
+
+  // 3D carousel
+  initCarousel();
+
+  // Loading overlay fade-out
+  window.addEventListener("load", () => {
+    const wrapper = document.querySelector(".wrapper");
+    if (wrapper) {
+      wrapper.style.transition = "opacity 0.5s ease";
+      wrapper.style.opacity = "0";
+      setTimeout(() => { wrapper.style.display = "none"; }, 500);
+    }
+  });
+});
