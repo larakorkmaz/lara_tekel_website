@@ -1,0 +1,142 @@
+[
+    {
+        "id": "redbull",
+        "title": "Red Bull",
+        "desc": {
+            "tr": "Enerji veren klasik Red Bull; uyanıklık ve konsantrasyona destek olur.",
+            "en": "Classic Red Bull energy; supports alertness and concentration."
+        },
+        "img": "../images/featured/redbull.png",
+        "featured": true
+    },
+    {
+        "id": "redbull-sugarfree",
+        "title": "Red Bull Sugar Free",
+        "desc": {
+            "tr": "Klasik Red Bull’un şekersiz versiyonu; hafif ve ferahlatıcı enerji.",
+            "en": "The sugar-free version of classic Red Bull; light and refreshing energy."
+        },
+        "img": "../images/featured/redbull_sugarfree.png",
+        "featured": true
+    },
+    {
+        "id": "redbull-red",
+        "title": "Red Bull Red Edition",
+        "desc": {
+            "tr": "Kırmızı meyve aromalı, enerjik ve ferahlatıcı Red Bull.",
+            "en": "Red berry flavored, energetic and refreshing Red Bull."
+        },
+        "img": "../images/featured/redbull_red.png",
+        "featured": true
+    },
+    {
+        "id": "redbull-blue",
+        "title": "Red Bull Blue Edition",
+        "desc": {
+            "tr": "Yaban mersini aromalı, tatlı ve serinletici enerji içeceği.",
+            "en": "Blueberry flavored, sweet and cooling energy drink."
+        },
+        "img": "../images/featured/redbull_blue.png",
+        "featured": true
+    },
+    {
+        "id": "redbull-peach",
+        "title": "Red Bull Peach Edition",
+        "desc": {
+            "tr": "Şeftali aromalı özel Red Bull, hafif ve meyvemsi tat.",
+            "en": "Peach flavored special Red Bull, light and fruity taste."
+        },
+        "img": "../images/featured/redbull_peach.png",
+        "featured": true
+    },
+    {
+        "id": "redbull-white",
+        "title": "Red Bull White Edition",
+        "desc": {
+            "tr": "Hindistan cevizi ve yaban mersini aromalı, tropikal ferahlık.",
+            "en": "Coconut and blueberry flavored, tropical freshness."
+        },
+        "img": "../images/featured/redbull_white.png",
+        "featured": true
+    },
+    {
+        "id": "redbull-yellow",
+        "title": "Red Bull Yellow Edition",
+        "desc": {
+            "tr": "Egzotik tropikal meyve aromalı enerji içeceği.",
+            "en": "Exotic tropical fruit flavored energy drink."
+        },
+        "img": "../images/featured/redbull_yellow.png",
+        "featured": true
+    },
+    {
+        "id": "redbull-pink",
+        "title": "Red Bull Pink Edition",
+        "desc": {
+            "tr": "Pembe greyfurt aromalı özel Red Bull serisi.",
+            "en": "Pink grapefruit flavored special Red Bull edition."
+        },
+        "img": "../images/featured/redbull_pink.png",
+        "featured": true
+    },
+    {
+        "id": "coca-cola",
+        "title": "Coca-Cola",
+        "desc": {
+            "tr": "Efsanevi orijinal kola tadı; serinletici ve ferahlatıcı.",
+            "en": "The legendary original cola taste; refreshing and cooling."
+        },
+        "img": "../images/featured/cola.png",
+        "featured": true
+    },
+    {
+        "id": "coca-cola-zero",
+        "title": "Coca-Cola Zero",
+        "desc": {
+            "tr": "Şekersiz ve kalorisiz kola; aynı orijinal tat.",
+            "en": "Sugar-free and calorie-free cola; same original taste."
+        },
+        "img": "../images/featured/cola_zero.png",
+        "featured": true
+    },
+    {
+        "id": "coca-cola-light",
+        "title": "Coca-Cola Light",
+        "desc": {
+            "tr": "Daha hafif tat ve düşük kalorili kola seçeneği.",
+            "en": "Lighter taste and lower calorie cola option."
+        },
+        "img": "../images/featured/cola_light.png",
+        "featured": true
+    },
+    {
+        "id": "cappy-karisik",
+        "title": "Cappy Karışık",
+        "desc": {
+            "tr": "Elma, portakal, şeftali ve daha birçok meyvenin birleşimiyle ferah karışık meyve suyu.",
+            "en": "Refreshing mixed fruit juice with apple, orange, peach and more."
+        },
+        "img": "../images/featured/cappy_karisik.png",
+        "featured": true
+    },
+    {
+        "id": "cappy-seftali",
+        "title": "Cappy Şeftali",
+        "desc": {
+            "tr": "Olgun şeftali tadıyla tatlı ve serinletici meyve suyu.",
+            "en": "Sweet and refreshing peach juice with ripe peach flavor."
+        },
+        "img": "../images/featured/cappy_seftali.png",
+        "featured": true
+    },
+    {
+        "id": "cappy-visne",
+        "title": "Cappy Vişne",
+        "desc": {
+            "tr": "Yoğun vişne aromasıyla ekşi-tatlı bir serinlik.",
+            "en": "Intense sour-cherry flavor, sweet and tangy refreshment."
+        },
+        "img": "../images/featured/cappy_visne.png",
+        "featured": true
+    }
+]
