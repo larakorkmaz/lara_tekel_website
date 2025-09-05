@@ -5,10 +5,10 @@
     box-sizing: border-box;
 }
 
-/* Her şeyi gizle */
+/* Her şeyi gizle 
 body>*:not(.coming-soon-overlay) {
     display: none;
-}
+}*/
 
 
 html,
@@ -657,7 +657,7 @@ body.no-scroll {
 }
 
 .product img {
-    max-width: 60px;
+    max-width: 30px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
@@ -670,8 +670,7 @@ body.no-scroll {
 }
 
 .product.active img {
-    transform: scale(1.3);
-    /* sadece şişe büyür */
+    transform: scale(1.2);
     filter: drop-shadow(0 4px 12px rgba(255, 172, 48, 0.4));
 }
 
@@ -695,7 +694,7 @@ body.no-scroll {
 
 /* BIG IMG */
 .product-detail img {
-    width: 200px;
+    width: 100px;
     background: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
@@ -2047,10 +2046,9 @@ body.no-scroll {
     }
 
     .product img {
-        max-width: 56px;
+        max-width: 30px;
     }
 
-    /* Scroll okları (daha yakın dursun, taşma yapmasın) */
     .special-products .scroll-btn {
         top: 25%;
         width: 38px;
@@ -2066,20 +2064,14 @@ body.no-scroll {
         right: 18px;
     }
 
-    /* Büyük görsel + bilgi kartı hizası */
     .product-detail {
         height: 300px;
-        /* 320 -> 300 */
         gap: 18px;
         padding: 20px 72px;
-        /* sağ/sol nefes */
     }
 
-    /* Büyük şişe görseli biraz kontrollü */
     .product-detail img {
-        /* #detail-img dahil */
-        width: 190px;
-        /* 200 -> 190 */
+        width: 100px;
         filter: drop-shadow(0 5px 14px rgba(0, 0, 0, .34));
     }
 
@@ -2188,9 +2180,6 @@ body.no-scroll {
         border-radius: 16px;
     }
 
-    .product img {
-        max-width: 52px;
-    }
 
     /* Scroll okları */
     .special-products .scroll-btn {
@@ -2215,11 +2204,6 @@ body.no-scroll {
         gap: 16px;
         padding: 18px 40px;
         /* sağ/sol nefes alanı */
-    }
-
-    /* Büyük şişe görseli */
-    .product-detail img {
-        width: 170px;
     }
 
     /* Sağdaki bilgi kartı */
@@ -2271,9 +2255,6 @@ body.no-scroll {
         gap: 16px;
     }
 
-    .product-detail img {
-        width: 160px;
-    }
 
     .product-info {
         width: 280px;
@@ -2313,11 +2294,6 @@ body.no-scroll {
     .product-detail {
         grid-template-columns: 1fr;
         text-align: center;
-    }
-
-    .product-detail img {
-        width: 140px;
-        margin: 0 auto;
     }
 
     .product-info {
@@ -2498,10 +2474,6 @@ body.no-scroll {
         border-radius: 14px
     }
 
-    .product img {
-        max-width: 44px
-    }
-
     .special-products .scroll-btn {
         top: 23%;
         width: 32px;
@@ -2525,10 +2497,6 @@ body.no-scroll {
         align-items: center;
         padding: 14px;
         margin-top: 8px;
-    }
-
-    .product-detail img {
-        width: 130px
     }
 
     .product-info {
@@ -2751,7 +2719,7 @@ body.no-scroll {
     }
 
     .product-detail img {
-        width: 112px;
+        width: 20px;
         filter: drop-shadow(0 4px 12px rgba(0, 0, 0, .35));
     }
 
@@ -2897,7 +2865,7 @@ body.no-scroll {
     }
 
     .product-detail img {
-        width: 120px;
+        width: 30px;
     }
 }
 
@@ -3062,4 +3030,3 @@ body.no-scroll {
 .terms-list li {
     margin-bottom: 10px;
 }
-
